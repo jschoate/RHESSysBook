@@ -1,0 +1,99 @@
+project:
+  type: book
+  output-dir: docs
+  resources:
+    - media/
+    - images/
+
+book:
+  title: "RHESSys in Practice:"
+  subtitle: "Applied Ecohydrological Modeling"
+  page-navigation: true
+  repo-url: https://github.com/JscBren/jschoate.github.io
+  
+  page-footer:
+    left: "RHESSys in Practice was written by Janet S. Choate with Naomi Tague and Ryan R. Bart."
+    right: "Built with <a href='https://quarto.org/'>Quarto</a>."
+
+  chapters:
+    - file: index.qmd
+      text: "Welcome"
+    
+    - preface.qmd  
+  
+    - part: part1intro.qmd
+      chapters:
+        - file: introduction.qmd
+          text: "Introduction"
+        - file: setup.qmd
+          text: "Installation"
+        - file: projectdesign.qmd
+          text: "Project Design"
+        - file: exampledataset.qmd
+          text: "Example Dataset"
+            
+    - part: part2intro.qmd
+      chapters:
+        - file: userdata.qmd
+          text: "User-Acquired Data"
+        - file: inputfiles.qmd
+          text: "RHESSys Specific Files"
+        - file: worldfile.qmd
+          text: "Worldfile"
+        - file: preprocessing.qmd
+          text: "Preprocessing"
+        - file: implementation.qmd
+          text: "Implementation & Execution"
+        - file: postprocess.qmd
+          text: "Postprocessing"
+          
+    - part: part3intro.qmd
+      chapters:
+        - file: initialization.qmd
+          text: "Initialization"
+        - file: sensanal.qmd
+          text: "Sensitivity Analysis"
+        - file: calibration.qmd
+          text: "Calibration"
+        - file: validation.qmd
+          text: "Validation"
+        
+    - part: part4intro.qmd
+      chapters:
+        - file: advancedfeatures.qmd
+          text: "Advanced Features"
+        - file: fire.qmd
+          text: "Fire Spread & Effects"
+        - file: vegchange.qmd
+          text: "Landcover Change"
+        - file: msr.qmd
+          text: "Multi-scale routing"
+        - file: targetspinup.qmd
+          text: "Target-driven spin-up"
+        - file: parallelization.qmd
+          text: "Parallelization"
+
+  appendices: 
+    - appendices.qmd
+
+
+
+
+format:
+  html:
+    theme:
+      - cosmo
+      - RHbook.scss
+    code-link: true
+    toc: true
+    number-sections: true
+    number-depth: 2
+   
+    
+
+  pdf:
+    documentclass: scrreprt
+    fontsize: 11pt
+    geometry: margin=1in
+    number-sections: true
+    number-depth: 2

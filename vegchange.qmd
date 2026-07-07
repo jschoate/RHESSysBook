@@ -1,0 +1,30 @@
+# Landcover Change (The Evolution)
+
+## Types of Change
+-   Land Cover/Vegetation change
+-   biomass pool changes
+
+        
+## Changing the vegetation cover
+-   Homogeneous changes 
+-   Heteorogeneous changes 
+-   Partial redefinition (thinning)
+
+
+## Generate a Redefined worldfile
+-   redefine with an awk script
+-   redefine with a modified worldfile (redefine worldfile)
+    - redefine template
+-   short simulation to output a changed worldfile
+-   new redefined worldfile output for use in subsequent simulations
+    
+## Applying the Change
+-   worldfile date extension
+-   Tecfile date
+-   Tecfile events
+    -   redefine_world
+    -   redefine_world_multiplier
+    -   redefine_world_thin_remain
+    -   redefine_world_thin_harvest
+    -   redefine_world_thin_snags
+

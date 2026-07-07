@@ -1,0 +1,33 @@
+
+# Getting Started {.unnumbered}
+
+
+# 
+
+-   This part is about understanding the logic of this tool and setting the computational environment
+-   intro to what is covered in the section
+-   expected outcome for this section: functioning modeling environment and clear strategic plan
+
+# 
+
+## Chapters in this section
+
+<div>
+
+### [Introduction](introduction.qmd)
+
+Understanding what RHESSys is
+
+### [Installation](setup.qmd)
+
+Establishing the modeling environment
+
+### [Project Design](projectdesign.qmd)
+
+Planning your project strategy
+
+### [Example Dataset](exampledataset.qmd)
+
+Explore the example data set
+
+</div>

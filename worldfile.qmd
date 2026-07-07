@@ -1,0 +1,58 @@
+# Worldfile (The Anatomy)
+
+Chapter 6 described how RHESSys-specific files assign parameters, climate forcing, routing rules, and simulation controls to spatial units within a watershed. Those assignments depend on a predefined spatial hierarchy, but that hierarchy has not yet been explained.
+
+The Worldfile provides this structure. It defines the hierarchical organization of the watershed into discreet spatial units, establishing the spatial framework to which model inputs are applied. 
+
+This chapter examines the architecture of the Worldfile, the identifiers that connect it to supporting files, and the spatial framework that underpins every RHESSys simulation.
+
+-   figure here to illustrate the worldfile and how input files are linked to the landscape
+-   refer to throughout the chapter
+
+## Spatial Hierarchy: The Landscape Representation
+
+-   Hierarchical spatial containment structure
+    -   Basin
+    -   Hillslope (sub-basin)
+    -   Zone
+    -   Patch Families containing Asptatial patches
+    -   Stratum
+-   Containment rules
+-   processes associated with each level
+
+## Structural Index: Worldfile Architecture
+
+-   worldfile format
+-   spatial unit ID's  
+-   parent-child linking logic (stratum/patch ID's built on patch family ID)
+-   values for stores and fluxes organized at each spatial level
+-   Linking identifiers (ID's) pointing to the associated definition & climate files
+
+## Definition File Link: Parameter Integration
+
+-   def files define WHAT parameters applied to associated level, Worldfile defines WHERE they live spatially
+
+## Climate Link: Base Station Integration
+-   how climate maps to spatial units
+-   how climate inputs are distributed across the landscape
+-   spatial resolution of climate inputs - the spatial unit applied to
+
+
+## Template File: The Recipe
+
+-   set of instructions used to build the model's digital spatial landscape
+-   links GIS raster data to the hierarchical structure
+-   maps rules from input files to spatial structure
+-   contents:
+    -   Spatial world objects
+    -   State variables
+    -   Default and base station ID's
+-   program applies the template instructions to each spatial unit, expanding the rules to the extent of the defined watershed area, resulting in the Worldfile
+
+## Integrated Spatial System
+-   Worldfile is the integration point for the Chapter 6 inputs
+-   spatial manifestation of input information
+
+
+
+

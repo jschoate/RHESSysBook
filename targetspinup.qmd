@@ -1,0 +1,22 @@
+# Target-driven spin-up (The Alignment)
+
+This approach (target driven spin-up) merges the two existing methods for initializing vegetation carbon and nitrogen stores, where one or more real vegetation parameters derived from a spatial data layer (e.g. LAI from TM or MODIS, stem wood or total biomass from LiDAR, or even stand age maps etc.) are used to define targets for each patch. The model is then run in spin-up mode - which tracks C & N stores for each patch separately until the target value is reached. Once all patches have reached their target, the model outputs a world state that includes the appropriate C and N stores for all patches, which can then be used to initialize subsequent simulations.
+
+-   advanced method of spin-up to reach varying stages of observed ecological states
+-   run to reach spatially explicit targets, i.e. LAI
+-   types of spin-up targets
+-   sources for deriving targets
+
+## Prerequisites to running:
+
+-   spin-up target file
+-   target file header
+-   spin-up definition file
+-   worldfile with spinup object ID
+-   worldfile header pointer
+
+## Running a target driven spin up
+
+-   required command line option
+-   automatic world state generated (no tec event needed)
+-   setting the end date

@@ -1,0 +1,47 @@
+# User-Acquired Data (The Ingredients)
+
+-   here introduce what each item is, why necessary, sources to obtain
+
+## Spatial Data
+
+-   Required
+    -   DEM (source to obtain)
+        -   DEM Derivatives - generation discussed in later section:
+            -   Watershed Basin boundary
+            -   Sub-basins (hillslopes)
+            -   Slope/Aspect
+            -   E/W Horizons
+            -   Stream Network
+            -   Patches
+    -   Watershed outlet - gauge location coordinates
+-   Recommended (typical) or when applicable:
+    -   Vegetation cover
+    -   Soils
+    -   Landcover/Landuse
+    -   Roads
+    -   Impervious areas
+    -   Climate base stations
+    -   Aspatial rules ID map for multi-scale routing
+
+## Climate Data
+
+-   Timeseries data
+-   Required meteorologic data
+-   Optional meteorologic data
+-   About Supported options
+    -   local station data (point)
+    -   gridded products
+        -   ascii
+        -   NetCDF
+    -   pros/cons of using each
+    -   sources to obtain
+
+## Observational Data
+
+-   used to constrain and evaluate hydrologic and ecophysiological parameterization
+-   Types of observed data
+    -   utility (how will be used, i.e. veg values to initialize parameters, also to validate performance)
+    -   Hydrologic (i.e., Streamflow, Snow, Soil moisture)
+    -   Vegetation (i.e, LAI, Height, NPP, ET, rooting depth)
+    -   Soil (type, properties, texture) (polaris)
+    -   sources to obtain

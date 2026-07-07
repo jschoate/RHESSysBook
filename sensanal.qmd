@@ -1,0 +1,42 @@
+# Sensitivity Analysis (The Influence)
+This step relies on a set of R-based scripts and tools that manage the workflow from start to finish. These are tied directly into example datasets so the process can be reproduced and tested easily.
+
+## Tools and Implementation Framework
+-   R scripts and workflow tools for running sensitivity analysis 
+    -   reference to example data set, explanation of workflow process and functions
+-   Formalize and standardize workflow for inclusion in RHESSysIOinR
+    -   establish consistent interfaces between model runs and analysis scripts
+    
+## Defining the Parameter Space
+-   Establishing realistic parameter bounds and constraints
+-   Using literature values and expert knowledge to inform ranges
+-   Sampling strategies to explore the parameter space (e.g., random, Latin hypercube)
+-   Ensuring parameter space/parameter combinations are ecologically plausible
+
+## Running Simulation Experiments
+-   Automating model runs across parameter sets using R functions/tools
+-   Managing batch simulations and computational efficiency
+-   Structuring iterative runs for scalable exploration of uncertainty
+
+## Identifying Influential Parameters
+-   Evaluating how individual parameters influence model outputs
+-   Detecting parameter interactions and non-linear effects
+-   Linking parameter sensitivity to underlying model processes
+-   Comparing sensitivity across different output variables or metrics
+
+
+## Parameter Selection and Interpretation
+-   Defining target outputs and evaluation criteria
+-   Quantifying uncertainty and variability in model response
+-   Using statistical and machine learning tools (e.g., random forests, variance-based methods) to estimate parameter importance
+-   Ranking parameters performance by influence and stability across simulations
+-   Interpreting results in terms of model behavior and process understanding
+
+## Reporting & Diagnostics
+-   Visualizing sensitivity results 
+-   Summarizing key drivers of model behavior
+-   Documenting robust vs unstable parameters
+-   Feeding results back into model for refinement
+
+
+

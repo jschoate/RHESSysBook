@@ -1,0 +1,55 @@
+# Initialization (The Equilibrium)
+
+Introduction to:
+
+-   Description and purpose of initialization
+
+-   State variables that require initialization
+
+-   Initial values can be estimated from literature, observations, default parameter sets
+
+-   Spin-up allows model state to adjust from initial estimates
+
+-   Different variables may need different lengths of time to stabilize
+
+-   Repeated climate is often used in the spin-up process
+
+-   Criteria to determine stabilization
+
+-   Established stable conditions used for subsequent simulations
+
+-   link to video(s)
+
+## Spin-up/Initializing approaches
+
+### Cold start
+
+-   starting with very low/zero soil/veg/litter C/N values
+
+### Warm start
+
+-   reduces model spin-up time
+-   initialize with literature values or estimates from previous simulation
+
+## Spin-up Strategy
+
+-   using a single patch or hillslope
+-   transfer values to larger watershed
+-   static/dynamic spin-up
+
+## Spin-up Procedure
+
+-   Assign initial state variable values
+-   Include a spin-up tecfile event
+-   Establish time period for spin-up
+-   Standard spin-up output variables for evaluation
+-   Conduct spin-up simulation
+-   State-of-the world output Worldfile generated at end of spin-up period
+
+## Evaluate convergence
+
+-   Assess whether key state variables have stabilized/reached target value
+-   Continue spin-up if substantial trends remain
+-   Use output worldfile from previous simulation as starting condition for next simulation
+-   Determine baseline equilibrium
+-   Stable conditions stored in final spin-up state-of-the-world Worldfile as starting point future simulations

@@ -1,0 +1,38 @@
+# Fire Spread & Effects (The Inferno)
+
+
+## Fire Spread
+
+### About
+-   description
+-   reference key papers
+
+### Preparation
+-   compiling RHESSys-WMFire: Boost/WMFire library
+-   Prerequisites to running the fire model:
+    -   Wind speed and direction data
+    -   Fire definition file parameters
+        -   calculating the fire return interval
+        -   calculating wind parameters (EstimateWindDistrExample.R script)
+    -   Worldfile header edits
+    -   Add worldfile state variable
+    -   Command line option
+
+### Outputs
+-   Fire definition parameter options to generate output
+    -   Fire Sizes output
+    -   Grid output
+-   spatial level fire outputs
+
+### Fire simulation stragey
+-   stochastic
+-   prescribed
+
+## Fire Effects
+
+-   about
+-   Fire effects parameters in vegetation and soil(patch) definition files
+-   specific fire effects output files
+
+
+

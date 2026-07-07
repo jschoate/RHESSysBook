@@ -1,0 +1,59 @@
+# RHESSys-specific Files (The Toolkit)
+
+RHESSys relies on a collection of specialized files that define model parameters, climate inputs, spatial structures, routing relationships, execution schedules, and output behavior. Together, these files form the model's anatomy. Among them, the Worldfile occupies a central role and is treated separately in Chapter 7 due to its complexity and importance. The files presented in this chapter provide the parameters, forcing data, and control information that are associated with the spatial units defined in the Worldfile.
+
+
+## Definition (Default) Files: The Library
+
+-   describe typical meteorological, soil, vegetation, and land use characteristics
+-   File types associated with each level
+-   Parameter values constant through simulation
+
+## Base station file: The Climate Hub
+
+-   points to the set of climate data input files
+-   provides climate station identifier
+-   connects climate forcing to zones in the worldfile
+
+## Header File: The Directory
+
+-   an index of all the definition/climate files RHESSys needs to run a simulation
+-   connects the Worldfile to the Climate/Definiton files - how the ID's get linked
+
+## Flowtable: The Plumbing
+
+-   Architecture
+-   Topographic data about each patch
+-   Routing, Patch connectivity, neighbors
+-   Partitioning flow, upland patches, stream patches
+
+## Tecfile and Output Filters: Simulation Control
+
+### Tecfile: The Alarm Clock
+
+-   Manage timing of output printing
+-   Control simulation events (schedule when non-continuous events occur, i.e. fire, land use change)
+-   Trigger a worldfile redefinition to update properties of the landscape
+
+### Output filters: The Sieve
+
+-   specify criteria for selecting and filtering the output data
+-   Filter rules
+-   Filter conditions
+-   Filter Parts: timestep, spatial level, output format/name
+-   Variables associated with Spatial/Temporal leval of output
+    -   sub-level output
+    -   sub-routine output
+-   Variable reassignment: name reassignment, arithmetic expressions
+
+## The Operational Framework
+
+The files described in this chapter provide the information and controls required to configure a RHESSys simulation. While each file serves a distinct purpose, together they operate through a shared set of spatial identifiers that link model inputs to discrete spatial units within the watershed.
+
+These spatial units provide the framework for mapping the model's input data. Each parameter and climate forcing input ultimately depends on this spatial structure to determine where and how it is applied during simulation.
+
+However, the definition of this spatial structure itself has not yet been described. The files in this chapter assume the existence of a hierarchical representation of the watershed, but do not define how that structure is constructed or organized.
+
+The next chapter addresses this missing component directly by introducing the Worldfile—the hierarchical spatial framework that defines the structure of the modeled landscape and provides the foundation upon which all files described in this chapter operate.
+
+-   New figure showing connections among files

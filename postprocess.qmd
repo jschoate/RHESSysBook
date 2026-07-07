@@ -1,0 +1,43 @@
+# Post-processing (The Insight)
+
+Post-processing is the stage where raw model outputs are transformed into something interpretable, comparable, and useful. This chapter includes example datasets, scripts, and figures that demonstrate a typical post-processing workflow from raw output to final interpretation.
+
+-   link to how-to video(s)
+
+## Output Data Wrangling
+
+-   Reading output files into R
+-   Combining outputs across runs or scenarios
+-   Reshaping and organizing data
+-   Calculating derived variables and summaries
+-   Preparing datasets for analysis and visualization
+
+## Output Interpretation
+
+-   Exploring patterns and trends
+-   Comparing scenarios
+-   Assessing model behavior
+-   Identifying unexpected results
+-   Connecting outputs to research questions
+
+## Output Visualization
+
+-   Time-series plots
+-   Generating/viewing Spatial data
+-   Comparative figures
+-   Summary statistics and tables
+-   Communicating uncertainty
+
+## Output Synthesis
+
+-   Integrating results across spatial, temporal, process scales
+-   Summarizing key findings
+-   Interpreting results to inform decisions or next steps
+-   Relating results back to model objectives
+
+## Example Dataset
+
+-   Example output files
+-   Example R post-processing scripts
+-   Example visualizations
+-   Example Files and scripts referenced throughout the chapter

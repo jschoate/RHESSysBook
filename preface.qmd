@@ -1,0 +1,28 @@
+
+# About this Manual {.unnumbered} 
+
+
+## Conventions
+
+-   How to read this document
+-   Key/Legend for document formatting - regarding use of icons, symbols, different font indications
+
+## Manual Structure
+
+-   organization
+-   navigation
+-   links to sections
+-   potentially a link to a quick start guide
+
+## Support/Resources
+
+-   Potentially include author info contact info (?)
+-   links to
+    -   R/Rstudio resources
+    -   Git/Github
+    -   RHESSys GitHub repositories (RHESSys code, RHESSysPreProcessing, RHESSysIOinR, ParameterLibrary)
+    -   RHESSys Wiki(s)
+    -   (Potentially) a FAQ page, a user community forum (i.e. 'issues' section on RHESSys Github repo?)
+    -   other relevant resources
+
+

@@ -1,0 +1,87 @@
+# Preprocessing (The Assembly)
+-   the how to section
+-   instructions to process/generate files
+-   how to format data
+-   link to video(s)
+
+
+## Environmental Setup
+
+-   Standard directory structure
+-   naming convention
+
+## Raster Processing
+
+-   Spatial processing using WhiteboxTools and R
+
+WhiteboxTools is a collection of geospatial analysis tools used throughout this workflow. The whitebox R package provides an interface to these tools, but the WhiteboxTools executable must also be installed.
+the command whitebox::install_whitebox() downloads a precompiled executable (binary) for the user's operating system (Windows, macOS, or Linux).
+
+In the process_spatial_inputs.Rmd file
+dem <- RHESSysPreprocessing::download_terrain_variables(bbox = bbox_landscape,
+                                                        data_source = "FedData",
+                                                        variable = "dem",
+                                                        label = "sagehen",
+                                                        res_ned = "1",
+                                                        proj_epsg = utm_epsg,
+                                                        res_final = 90,
+                                                        res_final_example = NULL,
+                                                        output_file = "dem_landscape.tif")
+
+the res_ned option controls the source data resolution (NED product)
+-   1 arc-second is ~30 meters (CONUS standard)
+-   1/3 arc-second is ~10 meters (available for some areas including much of the western US)
+-   1/9 arc-second is ~3 meters (limited high-resolution coverage)
+
+setting res_ned to 1 retrieves a 30 meter DEM, setting res_ned to 13 retrieves a 10 meter DEM
+use the command terra::res(dem) to find out the resolution of the dem object
+
+
+NED Product	Approx. Resolution	Typical Use	Strengths	Limitations
+1/9 arc-second	~3 m	Very small watersheds, research on hillslope processes	Extremely detailed topography	Very expensive computationally; often too noisy for basin-scale RHESSys
+
+1/3 arc-second	~10 m	High-resolution watershed studies	Captures fine drainage features, realistic hillslopes	Large datasets; can introduce over-fragmented flow paths
+
+1 arc-second	~30 m	Standard RHESSys choice (recommended default)	Good balance of realism + computational efficiency	Misses fine terrain detail
+
+3 arc-second (older DEM products)	~90 m	Large basins, long simulations, teaching examples	Fast, stable, robust	Oversmoothed terrain; weak small-channel representation
+
+
+## Climate Fles
+-   gridded product formatting
+    -   ascii format
+    -   netcdf format
+-   local station data formatting
+-   base station
+
+## Definition Files
+-   Format - required (ID) and optional parameters
+-   Base Files/Default values
+-   Parameter file library
+-   some parameters may need expanded information, i.e. phenolog flag: static, dynamic, drought
+
+## Generating the Worldfile and Flowtable
+
+### The Template File
+
+-   Format and Initialization
+    -   World objects
+    -   State variables
+    -   Default and base station ID's
+-   Required and Optional state variables
+-   Editing the template, setting initial conditions
+
+### Aspatial rules file for Multi-scale routing
+
+-   Format
+-   Set up for single rule
+-   Set up for multiple rules - requires map
+
+### RHESSysPreprocessing R package
+
+-   About
+-   Prerequisites: spatial data, template, asp rules file
+-   R markdown workflow/script - functions
+-   Run the function to generate Worldfile/Flowtable
+
+ 

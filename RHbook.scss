@@ -1,0 +1,85 @@
+/*-- scss:defaults --*/
+
+$primary: #637238 !default;
+$font-size-root: 18px !default;
+$link-color: #0d6efd;
+
+/* Adjust space between title and subtitle */
+header .title,
+.title-block .title {
+  margin-bottom: 0.0rem !important; /* Forces the main title to release its bottom spacing */
+  color: #234323 !important;        
+}
+
+header .subtitle,
+.title-block .subtitle {
+  font-size: 2.0rem !important; 
+  font-weight: 500;             
+  margin-top: -0.2rem !important;  /* Prevents the subtitle from pushing away from the title */
+  color: #465927 !important;        /* Slate Gray (creates a nice, clean contrast) */
+}
+
+
+.sidebar-title::after {
+  content: "Applied Ecohydrological Modeling";
+  display: block;
+  font-size: 1.0em;
+  font-weight: 400;
+  opacity: 0.8;
+  margin-top: 0.25rem;
+}
+
+
+/*-- scss:rules --*/
+
+.sidebar-title {
+  color: #637238;
+}
+
+div.sidebar-item-container .active {
+  font-weight: bold;
+}
+
+.sidebar nav[role=doc-toc] ul>li>a.active, .sidebar nav[role=doc-toc] ul>li>ul>li>a.active{
+  font-weight: bold;
+}
+
+img.quarto-cover-image {
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+}
+
+/* Headings ------------------------------------------------------ */
+
+#title-block-header.quarto-title-block.default .quarto-title h1.title {
+  margin-bottom: 0.5rem;
+}
+
+h2 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+h3 { margin-top: 1.5em; font-size: 1.2rem; font-weight: 600; }
+h4 { margin-top: 1.5em; font-size: 1.1rem; }
+h5 { margin-top: 1.5em; font-size: 1rem; }
+
+.quarto-section-identifier {
+  color: #6C6C6C;
+  font-weight: normal;
+}
+
+/* Code ------------------------------------------------ */
+
+code {
+  color: #373a3c;
+}
+
+code a:any-link {
+  text-decoration: underline;
+  text-decoration-color: #ccc;
+}
+
+pre {
+  background-image: linear-gradient(160deg,#f8f8f8 0,#f1f1f1 100%);
+}

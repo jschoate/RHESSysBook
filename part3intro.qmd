@@ -1,0 +1,32 @@
+# Refinement and Evaluation {.unnumbered}
+
+
+-   This part is about moving from just a running model to a credible scientific tool.
+-   intro to what is covered in the section
+    -   the iterative cycle - cyclical refinement loop
+    -   include a figure/diagram/flowchart about the feedback loop
+    -   refinement not linear path - changing one parameter may require re-balancing the system
+    -   each phase informs the next - often requiring return to previous step
+-   expected outcome for this section: learning the process to ensure a balanced system
+
+## Chapters in this section
+
+<div>
+
+### [Initialization](initialization.qmd)
+
+Achieving model equilibrium
+
+### [Sensitivity Analysis](sensanal.qmd)
+
+Identifying influencing parameters
+
+### [Calibration](calibration.qmd)
+
+Fine-tuning parameters
+
+### [Validation](validation.qmd)
+
+Evaluating parameter performance
+
+</div>

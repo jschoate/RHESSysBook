@@ -1,0 +1,9 @@
+# Advanced Features (The Expansion)
+
+
+-   beyond the baseline
+-   moving into specialized simulations
+-   roadmap of why and when to use these advanced tools
+-   disturbance modeling in RHESSys: altering the carbon cycles and redirecting the flow of water and nutrients from the baseline
+-   predicting ecosystem resilience and recovery over time
+

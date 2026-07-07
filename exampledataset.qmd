@@ -1,0 +1,70 @@
+# Example Dataset (The Sandbox)
+
+![**Instructional System Design**](images/InstructionalSystemDesign.jpeg){fig-alt="Instructional System Design" width="1000"}
+
+## Study Site Overview
+
+-   Location → Sagehen
+-   Characteristics
+
+## Dataset Contents
+
+-   Standard project directory structure
+
+-   Spatial files
+
+-   Climate Base station examples
+
+    -   for local data (point, station)
+    -   for gridded products
+        -   ascii formatted
+        -   netcdf
+
+-   Meterological files
+
+    -   Precipitation
+    -   Temperature
+    -   Wind
+    -   Relative Humidity
+    -   Formatted for:
+        -   local data (point, station data)
+        -   gridded products
+
+-   Definition (default) Files
+
+-   observational data
+
+    -   streamflow timeseries
+    -   reference values (i.e. LAI, Height, Biomass)
+
+-   Preprocessing Rscript
+
+-   Worldfile and Flowtable examples (for a patch, a sub-basin (hillslope), and a full basin)
+
+-   Worldfile Header example
+
+-   Tecfile examples
+
+-   Output Filter examples
+
+-   Simulation Rscripts
+
+    -   will include functions to generate RHESSys specific supporting files
+    -   single run
+    -   multi-run
+    -   spin-up
+    -   sensitivity analysis
+    -   calibration
+
+-   Post-Processing Rscripts
+
+-   Example model output results
+
+-   Dataset Download instructions/link
+
+## How to use this data
+
+-   Contextual understanding
+-   Performance Evaluation - verification for user generated files
+-   Troubleshooting
+-   Modular learning - start at any step in the manual

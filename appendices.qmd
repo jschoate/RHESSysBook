@@ -1,0 +1,9 @@
+# Appendices (The Vault) {.unnumbered}
+
+## Command-line functionality
+
+## History/Legacy tools/functionality
+
+## Code organization
+
+## additional items will become clear as I go along!

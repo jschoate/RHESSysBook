@@ -1,0 +1,33 @@
+
+# From Data to Simulation {.unnumbered}
+
+
+-   This part is about building the model, constructing the foundation for a fuctional simulation
+-   intro to what is covered in the section
+-   expected outcome for this section: creating input in order to run the model, generate output, and interpret results
+
+## Chapters in this section
+
+<div>
+
+### [User-Aquired Data](userdata.qmd)
+
+Gathering and formatting the necessary ingredients
+
+### [RHESSys Specific Input Files](inputfiles.qmd)
+
+Understanding the core file anatomy
+
+### [Preprocessing](preprocessing.qmd)
+
+Assembling the model foundation
+
+### [Implementation & Execution](implementation.qmd)
+
+Launching the simulation
+
+### [Postprocessing](postprocess.qmd)
+
+Gaining model result insight
+
+</div>

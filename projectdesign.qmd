@@ -1,0 +1,106 @@
+# Project Design & Planning (The Strategy)
+
+-   Why project design matters - what the model is being built to accomplish
+-   Project design decision should be made before gathering/preparing data and constructing the model
+-   The cost of poor planning
+-   Model design is a sequence of interconnected decision
+
+## Model Purpose (The Anchor)
+
+-   Establish the scientific objectives of the project, is the purpose to:
+    -   gain system understanding through exploration
+    -   predict future conditions
+    -   compare management scenarios
+-   Define clear research questions that the model must address
+-   Identify needed outputs (e.g., hydrology, vegetation dynamics, carbon fluxes, fire behavior, scenario comparisons)
+-   Use research questions to constrain:
+    -   spatial scale
+    -   temporal scale
+    -   model complexity
+-   Ensure alignment between conceptual goals and RHESSys capabilities
+
+## Modeling Extent (The Frame)
+
+-   Define the spatial extent of the modeling domain, the area of interest:
+    -   patch-scale
+    -   hillslope-scale
+    -   watershed/basin-scale
+-   Match spatial extent to research questions and process scale
+-   Ensure the domain captures all relevant hydrologic/ecologic processes
+-   Restrict the model's scope to what is needed for analysis
+-   Establish initial spatial frame before deciding resolution or structure
+
+## Spatial Resolution vs. Computational cost (The Trade-off)
+
+-   Determine appropriate spatial resolution for the model domain
+-   Understand trade-offs between:
+    -   fine resolution = higher realism, higher computational cost
+    -   coarse resolution = faster runtime, reduced spatial detail
+-   Consider constraints:
+    -   available computing resources
+    -   simulation time requirements
+    -   data limits (DEM resolution, input data available)
+-   Ensure resolution is consistent with:
+    -   scale of the research questions (i.e. patch, subbasin, watershed)
+    -   input datasets
+    -   practical limits of available computing infrastructure
+
+
+### Selecting DEM Resolution
+
+RHESSys simulations begin with a digital elevation model (DEM), which defines the spatial structure of hillslopes and stream networks. The choice of DEM resolution influences model realism, computational cost, and numerical stability.
+
+National Elevation Dataset (NED) products are commonly available at 1 arc-second (~30 m) and 1/3 arc-second (~10 m) resolution. For most watershed-scale applications, a 30 m DEM provides a good balance between topographic realism and computational efficiency and is therefore recommended as the default. Higher-resolution DEMs (e.g., 10 m) may be used for small watersheds or studies focused on fine-scale hillslope processes but will substantially increase computational cost and may introduce additional complexity in flow routing and calibration. Coarser DEMs (e.g., 90 m) are suitable for large basins or computationally intensive ensemble experiments.
+
+Importantly, increasing DEM resolution does not necessarily improve model performance and may require recalibration of hydrologic parameters due to changes in derived terrain structure.
+
+(see notes emailed to self regarding selecting dem resolution)
+
+
+
+## Spatial Landscape Partitioning (The Structural Design)
+
+Multi-scale routing (MSR) allows for fine scale interactions within the smallest fundamental landscape unit. While this section briefly introduces MSR as a way of thinking about patch organization, its full implementation is deferred to [Chapter 18](msr.qmd) in the Advanced Applications section, where the methodology is discussed in full.
+
+-   Break landscape into RHESSys fundamental units (patches)
+-   Organize patches into patch families to represent spatial structure
+-   Represent land cover composition within patch families:
+    -   homogeneous landscapes = simpler structure (can be a single patch in a single patch family)
+    -   heterogeneous landscapes = more complex partitioning to capture variability in land cover or management regimes (may be multiple/many patches per family)
+-   Determine number and configuration of patches based on:
+    -   vegetation diversity
+    -   landcover/soil variability
+    -   management objectives
+-   Consider how patch family composition will support model scenarios:
+    -   design for scenario comparability (consistent model structure so differences between simulations only reflect the intended experimental change)
+    -   ability to pre-structure the landscape for management experiments
+    -   flexible scenario implementation without redesigning the landscape configuration
+-   may include a scenario-based design example to illustrate the utility
+
+## Data Availability, Synchronization & Temporal extent (The Feasibility)
+
+-   Availability of input data resources that support project objectives
+-   Climate data continuity, consistent time periods across all inputs
+-   Simulation period supported by temporal data extent
+-   Availability of observational data for evaluating model performance
+
+## Functional constraints (The Capability)
+
+-   ability of model setup to accomplish project goals
+-   available model processes
+-   ability of model to output variables needed to answer project questions
+-   availability of feature specific inputs to use specific process modules - i.e. wind speed/direction & relative humidity data to run the fire model
+
+## Summary: Building a Project Strategy
+
+-   Project design advances through a structured progression of limitations:
+    -   research questions → define purpose
+    -   purpose → determines spatial extent
+    -   extent → constrain resolution
+    -   resolution → informs spatial partitioning
+    -   partitioning → depends on data availability
+    -   data availability → determines functional feasibility
+-   Each step progressively narrows design choices
+-   Ensures model is both: -\>
+    -   aligned with the projects goals
+    -   practical to build and run with the available data and resources -\>

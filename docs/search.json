@@ -1,0 +1,30 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "RHESSys in Practice:",
+    "section": "",
+    "text": "Welcome to the RHESSys Manual"
+  },
+  {
+    "objectID": "index.html#purpose",
+    "href": "index.html#purpose",
+    "title": "RHESSys in Practice:",
+    "section": "Purpose",
+    "text": "Purpose\nInclude info about the manual, why it exists, what it is intended for"
+  },
+  {
+    "objectID": "index.html#scope",
+    "href": "index.html#scope",
+    "title": "RHESSys in Practice:",
+    "section": "Scope",
+    "text": "Scope\n\nWhat to expect from this book (user will learn….)\nWhat the manual covers (practical step-by-step guidance)\nWhat it does not cover (underlying theory of the model, all possible functionality)"
+  },
+  {
+    "objectID": "index.html#intended-audience",
+    "href": "index.html#intended-audience",
+    "title": "RHESSys in Practice:",
+    "section": "Intended Audience",
+    "text": "Intended Audience\n\nWho this is for/Who should be reading this\n\n\nAssumed basic prerequisite knowledge\n\nGeneral Modeling\nBasic R/Rstudio\nGIS and Raster/Vector\nBasic Unix/Linux environment (shell, command line, text editor)\nGit/GitHub"
+  }
+]

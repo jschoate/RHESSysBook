@@ -1,0 +1,35 @@
+# Advanced Applications {.unnumbered}
+
+-   This part is about exploring complex eco-hydrological scenarios
+-   intro to what is covered in the section
+-   expected outcome for this section: ability to move from model development to high impact scientific inquiry
+
+## Chapters in this section
+
+<div>
+
+### [Advanced Features](advancedfeatures.qmd)
+
+Expanding beyond the baseline
+
+### [Fire Disturbance](fire.qmd)
+
+Simulating the spark and igniting the inferno
+
+### [Disturbance:Vegetation Dynamics](vegchange.qmd)
+
+Transforming an evolving landscape
+
+### [Multi-scale routing](msr.qmd)
+
+Creating a mosaic landscape
+
+### [Target-driven spin-up](targetspinup.qmd)
+
+Aligning with observed ecological states
+
+### [Parallelization](parallelization.qmd)
+
+Accelerating model simulations
+
+</div>
