@@ -8,7 +8,7 @@ book:
   title: "RHESSys in Practice:"
   subtitle: "Applied Ecohydrological Modeling"
   page-navigation: true
-  repo-url: https://github.com/JscBren/jschoate.github.io
+  repo-url: https://github.com/jschoate/RHESSysBook
   
   page-footer:
     left: "RHESSys in Practice was written by Janet S. Choate with Naomi Tague and Ryan R. Bart."
