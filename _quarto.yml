@@ -37,8 +37,6 @@ book:
           text: "User-Acquired Data"
         - file: inputfiles.qmd
           text: "RHESSys Specific Files"
-        - file: worldfile.qmd
-          text: "Worldfile"
         - file: preprocessing.qmd
           text: "Preprocessing"
         - file: implementation.qmd

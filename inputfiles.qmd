@@ -1,7 +1,68 @@
-# RHESSys-specific Files (The Toolkit)
+# RHESSys-specific Files (The Infrastructure)
 
-RHESSys relies on a collection of specialized files that define model parameters, climate inputs, spatial structures, routing relationships, execution schedules, and output behavior. Together, these files form the model's anatomy. Among them, the Worldfile occupies a central role and is treated separately in Chapter 7 due to its complexity and importance. The files presented in this chapter provide the parameters, forcing data, and control information that are associated with the spatial units defined in the Worldfile.
+RHESSys relies on a collection of specialized files that define model parameters, climate inputs, spatial structures, routing relationships, execution schedules, and output behavior. The files described in this chapter provide the information and controls required to configure a RHESSys simulation. While each file serves a distinct purpose, together they operate through a shared set of spatial identifiers that link model inputs to discrete spatial units within the watershed.
 
+Although RHESSys uses many specialized input files, only the Worldfile contains the digital representation of the watershed. The remaining files either describe object properties, provide forcing data, specify routing, or control simulation behavior. During model construction, information from these supporting files is assembled into the Worldfile, which serves as the central representation of the modeled landscape throughout the simulation.
+
+(Note to self- each file section should address the same pattern:
+
+1.  Purpose - what role does the file play, what does it represent
+2.  Contents - what information does it store
+3.  Connections - how does it interact with the other files
+4.  Key considerations - common pitfalls, assumptions, implementation details)
+
+## Worldfile: The Digital Watershed
+
+The RHESSys landscape representation is stored in the Worldfile and provides the central structure. It defines the hierarchical organization of the watershed into discreet spatial units, establishing the spatial framework to which model inputs are applied. Each parameter and climate forcing input ultimately depends on this spatial structure to determine where and how it is applied during simulation.
+
+-   perhaps a figure here to illustrate the worldfile and how input files are linked to the landscape
+-   refer to throughout the chapter
+
+### Spatial Hierarchy: The Landscape Representation
+
+-   Hierarchical spatial containment structure
+    -   Basin
+    -   Hillslope (sub-basin)
+    -   Zone
+    -   Patch Families containing Asptatial patches
+    -   Stratum
+-   Containment rules
+-   processes associated with each level
+
+### Structural Index: Worldfile Architecture
+
+-   worldfile format
+-   spatial unit ID's\
+-   parent-child linking logic (stratum/patch ID's built on patch family ID)
+-   values for stores and fluxes organized at each spatial level
+-   Linking identifiers (ID's) pointing to the associated definition & climate files
+
+### Template File: The Recipe
+
+-   set of instructions used to build the model's digital spatial landscape
+-   links GIS raster data to the hierarchical structure
+-   maps rules from input files to spatial structure
+-   contents:
+    -   Spatial world objects
+    -   State variables
+    -   Default and base station ID's
+-   program applies the template instructions to each spatial unit, expanding the rules to the extent of the defined watershed area, resulting in the Worldfile
+-   Diagram: Spatial layers -\> Template rules -\> Expansion -\> Finished Worldfile
+
+### Definition File Link: Parameter Integration
+
+-   def files define WHAT parameters are applied to associated level, Worldfile defines WHERE they live spatially
+
+### Climate Link: Base Station Integration
+
+-   how climate maps to spatial units
+-   how climate inputs are distributed across the landscape
+-   spatial resolution of climate inputs - the spatial unit applied to
+
+### Bringing the Landscape to Life
+
+-   Worldfile is the integration point for the following inputs
+-   spatial manifestation of input information
 
 ## Definition (Default) Files: The Library
 
@@ -29,7 +90,7 @@ RHESSys relies on a collection of specialized files that define model parameters
 
 ## Tecfile and Output Filters: Simulation Control
 
-### Tecfile: The Alarm Clock
+### Tecfile: The Scheduler
 
 -   Manage timing of output printing
 -   Control simulation events (schedule when non-continuous events occur, i.e. fire, land use change)
@@ -45,15 +106,3 @@ RHESSys relies on a collection of specialized files that define model parameters
     -   sub-level output
     -   sub-routine output
 -   Variable reassignment: name reassignment, arithmetic expressions
-
-## The Operational Framework
-
-The files described in this chapter provide the information and controls required to configure a RHESSys simulation. While each file serves a distinct purpose, together they operate through a shared set of spatial identifiers that link model inputs to discrete spatial units within the watershed.
-
-These spatial units provide the framework for mapping the model's input data. Each parameter and climate forcing input ultimately depends on this spatial structure to determine where and how it is applied during simulation.
-
-However, the definition of this spatial structure itself has not yet been described. The files in this chapter assume the existence of a hierarchical representation of the watershed, but do not define how that structure is constructed or organized.
-
-The next chapter addresses this missing component directly by introducing the Worldfile—the hierarchical spatial framework that defines the structure of the modeled landscape and provides the foundation upon which all files described in this chapter operate.
-
--   New figure showing connections among files
