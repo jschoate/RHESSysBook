@@ -5,11 +5,15 @@
 
 ### What RHESSys is 
 
--   Description
+RHESSys (Regional Hydrologic Ecosystem Simulation System) is a process based model of the interactions among energy, water and vegetation and soil carbon, and nutrient cycling in the terrestrial environment. As a process based model, it uses established mechanistic understanding to simulate vegetation, water and soil nutrient fluxes and stores at scales from plot to regions. The model is both spatial and dynamic which allows the model to simulate how energy/water/carbon/nutrient stores and fluxes are distributed over space and evolve through time. The model uses meteorologic inputs, such as precipitation, as well topographic, species-related vegetation, soil and land use parameters to create a place-based representation.    
+
+RHESSys is designed as a community-model, and as such, the representation of specific process has evolved over time. Key developments include coupling with a fire spread and fire effects model, implementation of overstory and understory vegetation, added complexity to vegetation water/carbon/nutrient cycling mechanisms, representation of flowpaths that occur at different scales including deep groundwater flowpaths, surface flow redirection by impervious surfaces,  hillslope-scale lateral subsurface redistribution and plot-scale water transfers.  The main code for RHESSys is maintained on Github and tracks the evolution of the model.  
 
 ### Capabilities 
 
 -   Examples of what can be done with the model
+
+Use of RHESSys as a virtual laboratory and a digital twin (cites)
 
 ### Strengths 
 
@@ -24,20 +28,54 @@
 -   Can be computationally intensive
 -   Maybe any processes that are not well represented? Let users know if the model won't fit their research question
 
+There are some key processes that are not include in RHESSys that may be important for specific applications, These include
+- sediment transport and erosion
+- vegetation reproduction 
+- species change
+- feedbacks from land-surface to the atmosphere (e.g vegetation fluxes changing climate)
+- other nutrients (such a P) that may be limiting 
+- fine-scale fire behavior
+
 ### Comparison of RHESSys to other models 
+
+
 -   what this model is appropriate for
 -   what the trade-offs are
 
 ## Recommended reading/Publications
 
-### Foundational papers 
--   publication links with brief descriptions 
+RHESSys is an eco-hydrologic process-based model - and has similarities to other land-surface models (LSM), hydrologic and earth system models. 
+The following papers provide some additional context into process-based ecohydrologic models in general
 
-### Overview/Review papers 
--   publication links with brief descriptions 
+Fatichi, S., Pappas, C., & Ivanov, V. Y. (2016). Modeling plant–water interactions: an ecohydrological overview from the cell to the global scale. Wiley Interdisciplinary Reviews: Water, 3(3), 327-368.
 
-### Applications 
--   publication links with brief descriptions 
+
+To learn more about modeling workflow for coupled eco-hydrologic models see:
+Brookfield, A. E., Ajami, H., Carroll, R. W. H., Tague, C., Sullivan, P. L., & Condon, L. E. (2023). Recent advances in integrated hydrologic models: Integration of new domains. Journal of Hydrology, 620, 129515. (particularly the Appendix that provides guidance on Selecting an Integrated Hydrologic Model)
+
+A foundational RHESSys paper is 
+Tague, C., Band, L. (2004) RHESSys: Regional Hydro-ecologic simulation system: An object-oriented approach to spatially distributed modeling of carbon, water and nutrient cycling, Earth Interactions 8(19): 1-42.
+
+
+While the Tague and Band (2004) paper provides information on some core process representation, the model has continued to evolve and many of the process representations and model capabilities have changed. The papers below highlight several key changes. Details of specific process representation and how these have evolved are discussed in relevant sections of this book as needed. Papers on specific applications, such as using the model in urban settings or using the model to track distrubance are provided in appropriate sections in this book
+
+
+*Fire*
+Bart, R.R., Kennedy, M.C., Tague, C.L., McKenzie, D. (2020) Integrating fire effects on vegetation carbon cycling within an ecohydrologic model, Ecological Modelling 416: 108880. doi.org/10.1016/j.ecolmodel.2019.108880
+
+*Carbon Allocation in Plants*
+Garcia, E.S., Tague, C.L., Choate, J.S. (2016) Uncertainty in carbon allocation strategy and ecophysiological parameterization influences on carbon and streamflow estimates for two western US forested watersheds, Ecological Modeling 342: 19-33. doi: 10.1016/j.ecolmodel.2016.09.021
+
+Deeper Groundwater Hydrology
+Tague, C., Farrell, M., Grant, G., Choate, J., Jefferson A. (2008) Deep groundwater mediates streamflow response to climate warming in the Oregon Cascades, Climatic Change 86: 189-210.
+
+*Soil Nitrogen Cycling *
+Chen, X., Tague, C.L., Melack, J.M., Keller, A.A. (2020) Sensitivity of nitrate concentration-discharge patterns to soil nitrate distribution and drainage properties in the vertical dimension, Hydrological Processes doi: 10.1002/hyp.13742
+
+*Forest Mortality*
+Tague, C.L., McDowell, N.G., Allen, C.D. (2013) An integrated model of environmental effects on growth, carbohydrate balance, and mortality of Pinus ponderosa forests in the Southern Rocky Mountains, PLoS ONE 8(11): e80286. doi: 10.1371/journal.pone.0080286
+
+
 
 ## Workflow overview
 
