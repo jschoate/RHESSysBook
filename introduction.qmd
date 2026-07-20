@@ -5,7 +5,7 @@
 
 ### What RHESSys is 
 
-RHESSys (Regional Hydrologic Ecosystem Simulation System) is a process based model of the interactions among energy, water and vegetation and soil carbon, and nutrient cycling in the terrestrial environment. As a process based model, it uses established mechanistic understanding to simulate vegetation, water and soil nutrient fluxes and stores at scales from plot to regions. The model is both spatial and dynamic which allows the model to simulate how energy/water/carbon/nutrient stores and fluxes are distributed over space and evolve through time. The model uses meteorologic inputs, such as precipitation, as well topographic, species-related vegetation, soil and land use parameters to create a place-based representation.    
+RHESSys (Regional Hydrologic Ecosystem Simulation System) is a process based model of the interactions among energy, water and carbon, and nutrient cycling in the soil and vegetation of the terrestrial environment. As a process based model, RHESSys uses established mechanistic understanding to simulate vegetation growth, water and  nutrient fluxes and stores at scales from plot to regions. The model is both spatial and dynamic which allows RHESSys to simulate how energy/water/carbon/nutrient stores and fluxes are distributed over space and evolve through time. The model uses meteorologic inputs, such as precipitation, as well topographic, species-related vegetation, soil and land use parameters to create a place-based representation.    
 
 RHESSys is designed as a community-model, and as such, the representation of specific process has evolved over time. Key developments include coupling with a fire spread and fire effects model, implementation of overstory and understory vegetation, added complexity to vegetation water/carbon/nutrient cycling mechanisms, representation of flowpaths that occur at different scales including deep groundwater flowpaths, surface flow redirection by impervious surfaces,  hillslope-scale lateral subsurface redistribution and plot-scale water transfers.  The main code for RHESSys is maintained on Github and tracks the evolution of the model.  
 
@@ -13,7 +13,11 @@ RHESSys is designed as a community-model, and as such, the representation of spe
 
 -   Examples of what can be done with the model
 
-Use of RHESSys as a virtual laboratory and a digital twin (cites)
+
+RHESSys as a virtual laboratory and as a digital twin. As a digital twin, RHESSys can provide a place-based estimation of how water resources, carbon sequestration, nutrient export, flood and fire risk may change under a changing climate or with different land management practices. For example RHESSys has been used to estimate how seasonal streamflow may change with earlier snowmelt for specific Sierra Nevada watersheds in California, and how summer flow flows may change for watersheds in the Spanish Pynerness as abandonned pastures are invaded by shrubs. Because RHESSys can be run over a wide range of scenarios. it can be used to explore interfactions between land management and cliamte. For example RHESSys has been used to estimate the impact of fuel treatments on fire size  across historic and possible future climates.  
+
+As a virtual laboratory, RHESSys can be used to understand how  different mechanisms influence behavior. For example,RHESSYs has been used to show how sharing of water between trees and neighboring open space or forest gaps can significantly influence forest drought vulnerability and forest responses to thinning.  As a virtual laborartory, RHESSys can be used to help us understand the impact not only of what we know but also what we don't know. For example, RHESSys has been used to compare how different assumptions species-specific plant strategies for allocating the carbon they photosynthesis to leaves, stems and roots influence long-term productivity, and carbon sequestration. Similarly RHESSys can be used to explore the sensitivity of water/carbon/nutrient fluxes to uncertainty and variation in key parameters. For example, RHESSys has been used to estimate how uncertainty or unmeasured spatial variation in soil properties or within species ecophysiological properties impact estimation of streamflow, forest productivity and drought response.
+
 
 ### Strengths 
 
@@ -32,7 +36,7 @@ There are some key processes that are not include in RHESSys that may be importa
 - sediment transport and erosion
 - vegetation reproduction 
 - species change
-- feedbacks from land-surface to the atmosphere (e.g vegetation fluxes changing climate)
+- the influence of the land-surface to the atmosphere (e.g vegetation fluxes changing local climate)
 - other nutrients (such a P) that may be limiting 
 - fine-scale fire behavior
 
