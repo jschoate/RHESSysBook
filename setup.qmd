@@ -8,11 +8,12 @@
 
 -   more advanced users
 -   users who want more flexibility
+-   rhessys developers
 
 ### [Containerized setup (Docker)](#docker)
 
--   beginners
--   Windows users
+-   beginners - any platform
+-   Windows users (local install not supported on windows)
 -   portability
 
 ### [HPC/Cloud (SIF/Singularity)](#sif)
@@ -50,8 +51,36 @@
 
 ### Docker
 
--   Install Docker Desktop
--   Obtaining RHESSys image from the Docker Hub
+-   Install Docker Desktop on local computer
+    -   obtain from https://www.docker.com/products/docker-desktop/
+    -   this provides the Docker engine/environment needed to run Linux containers on local computer
+    -   the background Docker engine/VM that actually runs containers on macOS
+-   Start Docker Desktop software on local computer
+    -   Docker needs to be running in the background, but user doesn't have to do anything in its graphical interface.
+-   Open a terminal window
+    -   user will be running docker in the terminal environment
+    -   the interface where you give Docker commands
+-   Pull the RHESSys image
+    -   The image is the reusable RHESSys environment
+    -   This downloads the RHESSys image from Docker Hub onto the user's computer.
+-   Create and start a Docker container from that image
+    -   This is where the user specifies how they want the container configured — importantly, including how the RHESSys project files on the computer will be made available inside the container
+    
+-   useful commands that should be included in instructions:
+    -   docker images rhessys/rhessys
+        -   this tells you what image(s) docker has on your local computer
+    -   docker ps -a
+        -   That will show all containers, including stopped ones.
+    -   docker inspect <container-name>
+    
+    
+-   Image (rhessys/rhessys) → the RHESSys software package/template stored in Docker.
+-   Container → an instance created from that image, stored in your Docker environment.
+-   Running container → a container whose main process is currently running.
+-   Exited container → a container that exists but whose process has stopped.
+-   Created container → a container that exists but has never been started.
+
+-   Docker Desktop on macOS runs Linux containers inside Docker's Linux VM, so technically the container filesystem isn't just an ordinary folder sitting somewhere in your Mac's Finder. But from your perspective, yes, they're local Docker objects belonging to your Mac's Docker Desktop installation.
 
 ### SIF
 
