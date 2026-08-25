@@ -1,5 +1,4 @@
-
-# About this Manual {.unnumbered} 
+# About this Manual {.unnumbered}
 
 ## Helpful Background
 
@@ -11,30 +10,67 @@ You do not need to be an expert in modeling, R, GIS, Unix/Linux, or Git to use t
 -   **Unix/Linux environment**: Basic familiarity with using a terminal, running commands, navigating directories, and editing text files will be useful for installing and operating RHESSys
 -   **Git/GitHub**: Basic familiarity with Git and GitHub will help when obtaining RHESSys and working with model versions.
 
-If you are new to any of these topics, don't worry—you can still work through the manual. We provide guidance and links to resources where additional background may be helpful.
-
+If you are new to any of these topics, don't worry---you can still work through the manual. We provide guidance and links to resources where additional background may be helpful.
 
 ## Conventions
 
--   How to read this document
--   Key/Legend for document formatting - regarding use of icons, symbols, different font indications
+This manual uses consistent formatting, icons, and visual cues to distinguish commands, file names, code, important notes, and other types of information. The conventions below will help you interpret these elements as you work through the manual.
+
+| Element        | Meaning                                                                              |
+|:-----------------------------------|:-----------------------------------|
+| `code`         | Commands, code, file names, variables, or other text entered or referenced literally |
+| **bold**       | Important terms, actions, or interface elements                                      |
+| *italics*      | Emphasis or terminology being introduced                                             |
+| ⚠️ **Warning** | Something that could cause an error, unexpected result, or loss of work              |
+| 💡 **Tip**     | A useful suggestion or shortcut                                                      |
+| **Note**       | Additional context or clarification                                                  |
+| →              | A navigation step or sequence of actions                                             |
 
 ## Manual Structure
 
--   organization
--   navigation
--   links to sections
--   potentially a link to a quick start guide
+This manual follows the workflow of developing a RHESSys modeling project, beginning with project design and progressing through data preparation, model setup, simulation, and evaluation. Chapters are organized around the major components of this workflow, with each building on concepts and materials introduced earlier.
+
+### There are two ways to use the book:
+
+#### Follow the workflow
+
+For a new RHESSys user, work through the chapters in sequence. This provides the context and materials needed for each subsequent step.
+
+#### Jump to a specific topic
+
+For users who already have experience with RHESSys, use the navigation, table of contents, and links within the manual to move directly to a particular topic or procedure.
+
+#### Quick start
+
+Want to get started immediately? The \[Quick Start Guide\] provides a streamlined path through the minimum steps needed to run the example RHESSys project. For a fuller understanding of the modeling workflow, we recommend working through the manual in sequence.
 
 ## Support/Resources
 
--   Potentially include author info contact info (?)
--   links to
-    -   R/Rstudio resources
-    -   Git/Github
-    -   RHESSys GitHub repositories (RHESSys code, RHESSysPreProcessing, RHESSysIOinR, ParameterLibrary)
-    -   RHESSys Wiki(s)
-    -   (Potentially) a FAQ page, a user community forum (i.e. 'issues' section on RHESSys Github repo?)
-    -   other relevant resources
+### RHESSys Resources
 
+-   [RHESSys GitHub repository](https://github.com/RHESSys/RHESSys) --- source code, releases/branches, issues, etc.
+-   [RHESSys Wiki](https://github.com/RHESSys/RHESSys/wiki) --- detailed technical documentation and information on functionality. The current wiki includes sections for RHESSys basics, in-depth functionality, and code developers.
+-   [RHESSysPreprocessing](https://github.com/RHESSys/RHESSysPreprocessing) --- a set of functions to produce the required inputs for RHESSys - notably the worldfile and flowtable. The package also contains a variety of tools and utilities to facilitate other RHESSys-related tasks.
+-   [RHESSysIOinR](https://github.com/RHESSys/RHESSysIOinR)--- scripts and functions for interfacing with RHESSys in R/Rstudio and processing output. The objective of this R package is to clearly and efficiently produce R code that can be used to setup RHESSys, conduct calibrations and simulations, and process output.
+-   [ParameterLibrary](https://github.com/RHESSys/ParameterLibrary) --- RHESSys parameter/default-file resources.
 
+### Software and Tools
+
+-   [R](https://www.r-project.org/)/ [RStudio](https://posit.co/products/open-source/rstudio)
+-   [Git](https://git-scm.com/) / GitHub
+-   GIS resources
+-   Unix/Linux or terminal resources
+
+## Getting Help
+
+-   FAQ - answers to common issues and questions that users have encountered
+-   GitHub Issues - report a bug or ask for help
+-   User/community resources
+
+## About the Authors
+
+-   [Janet S. Choate](https://tagueteamlab.org/people/lab-manager/) is the lab manager of the Tague Team Lab at the Bren School of Environmental Science and Management at the University of California Santa Barbara and has over 20 years of experience working with RHESSys. She earned her Masters in Geography at San Diego State University under Naomi Tague. She has led numerous training sessions with RHESSys and has contributed extensively to RHESSys documentation.
+
+-   [Ryan R. Bart](https://scholar.google.com/citations?user=Uon6JToAAAAJ&hl=en) is an Ecological Modeler with the California Air Resources Board. He received his PhD in Geography from a joint-doctoral program between San Diego State University and the University of California, Santa Barbara. He has implemented a number of tools for improving the way RHESSys is run, such as RHESSysIOinR. He is an active developer for RHESSys, including implementing the fire effects component of the fire model.
+
+-   [Christina (Naomi) L. Tague](https://tagueteamlab.org/about-naomi-tague/) is a Professor at the Bren School of Environmental Science and Management at the University of California Santa Barbara. She holds a PhD in Geography from the University of Toronto and a BSc in Systems Design Engineering from the University of Waterloo, Canada. She is the lead developer and architect of RHESSys.
