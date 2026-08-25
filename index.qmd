@@ -8,22 +8,22 @@
 
 ## Purpose
 
-Include info about the manual, why it exists, what it is intended for
+Ecohydrology examines the connections and feedbacks among hydrological, ecological, and related systems. Because these systems are interconnected, changes to one system can affect the others, and these interactions can influence how the coupled system responds to the external drivers such as climate change, land-cover change, and disturbance. Understanding these interactions often requires an integrative modeling approach. RHESSys (Regional Hydro-Ecologic Simulation System) provides a framework for representing these interactions across landscapes and through time.
+
+This manual is designed to help researchers learn how to use RHESSys to investigate their own research questions, with an emphasis on understanding how the components of a RHESSys project fit together rather than simply learning individual commands or files.
+
+
 
 ## Scope
 
--   What to expect from this book (user will learn....)
--   What the manual covers (practical step-by-step guidance)
--   What it does not cover (underlying theory of the model, all possible functionality)
+This manual covers the practical workflow for developing and running RHESSys simulations, including project design, data preparation, model setup, simulation, and evaluation. It includes R-based tools developed to accompany this manual and simplify model setup, input preparation, and simulation management, as well as selected advanced capabilities such as vegetation manipulation and wildfire modeling.
+
+This manual is not intended to be a comprehensive reference for all RHESSys functionality or to provide a detailed treatment of the underlying theory and science. For advanced functionality and additional technical information, see the [RHESSys Wiki](https://github.com/RHESSys/RHESSys/wiki) and the [recommended RHESSys reading](https://jschoate.github.io/RHESSysBook/introduction.html#recommended-readingpublications).
+
 
 ## Intended Audience
 
--   Who this is for/Who should be reading this
+This manual is primarily intended for researchers, students, and practitioners who want to use RHESSys to explore a research question involving ecological or hydrological processes. It is designed for those with little or no previous experience with RHESSys who want to learn how to develop and run their own simulations, as well as more experienced RHESSys users looking to expand their skills or explore additional applications of the model.
 
-### Assumed basic prerequisite knowledge
 
--   **General Modeling**
--   **Basic R/Rstudio**
--   **GIS and Raster/Vector**
--   **Basic Unix/Linux environment (shell, command line, text editor)**
--   **Git/GitHub**
+

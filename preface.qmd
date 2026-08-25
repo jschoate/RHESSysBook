@@ -1,6 +1,18 @@
 
 # About this Manual {.unnumbered} 
 
+## Helpful Background
+
+You do not need to be an expert in modeling, R, GIS, Unix/Linux, or Git to use this manual. However, the more familiar you are with these tools and concepts, the easier it will be to work with RHESSys. Where appropriate, this manual introduces the basic skills needed to follow the workflow and provides resources for learning more.
+
+-   **General Modeling**: Familiarity with basic modeling concepts such as parameters, calibration, validation, and objective functions.
+-   **R/Rstudio**: Basic familiarity with R and RStudio will be useful, as many of the tools used in this manual are R-based.
+-   **GIS and Raster/Vector**: Basic familiarity with GIS and common spatial data formats will help with preparing model inputs.
+-   **Unix/Linux environment**: Basic familiarity with using a terminal, running commands, navigating directories, and editing text files will be useful for installing and operating RHESSys
+-   **Git/GitHub**: Basic familiarity with Git and GitHub will help when obtaining RHESSys and working with model versions.
+
+If you are new to any of these topics, don't worry—you can still work through the manual. We provide guidance and links to resources where additional background may be helpful.
+
 
 ## Conventions
 
