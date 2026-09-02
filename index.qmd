@@ -6,11 +6,11 @@
 
 ![](media/RhessysLogo_nobckgrnd.jpg){width="320"}
 
-## Purpose
+## Is RHESSys right for you?
 
-Ecohydrology examines the connections and feedbacks among hydrological, ecological, and related systems. Because these systems are interconnected, changes to one system can affect the others, and these interactions can influence how the coupled system responds to the external drivers such as climate change, land-cover change, and disturbance. Understanding these interactions often requires an integrative modeling approach. RHESSys (Regional Hydro-Ecologic Simulation System) provides a framework for representing these interactions across landscapes and through time.
+Are you interested in how ecological and hydrological processes interact, and how those interactions may change in response to climate change, land-cover change, or disturbance? Ecohydrology examines these connections and feedbacks among hydrological, ecological, and related systems. Because these systems are interconnected, changes to one system can affect the others, and the resulting interactions can influence how the coupled system responds to external drivers. Understanding these interactions often requires an integrative modeling approach, and RHESSys (Regional Hydro-Ecologic Simulation System) provides a framework for representing them across landscapes and through time.
 
-This manual is designed to help researchers learn how to use RHESSys to investigate their own research questions, with an emphasis on understanding how the components of a RHESSys project fit together rather than simply learning individual commands or files.
+This manual is designed to help you use RHESSys to investigate your own research questions. Rather than simply learning individual commands or files, you'll learn how the components of a RHESSys project fit together—from project planning and data preparation through model setup, simulation, and evaluation.
 
 
 

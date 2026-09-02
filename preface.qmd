@@ -2,19 +2,18 @@
 
 ## Helpful Background
 
-You do not need to be an expert in modeling, R, GIS, Unix/Linux, or Git to use this manual. However, the more familiar you are with these tools and concepts, the easier it will be to work with RHESSys. Where appropriate, this manual introduces the basic skills needed to follow the workflow and provides resources for learning more.
+You do not need to be an expert in modeling, R, GIS, Unix/Linux, or Git to use this manual. A little familiarity with these tools and concepts will make working with RHESSys easier, but if you are new to any of theses topics---don't worry, you can learn along the way. This manual provides the necessary guidance to follow the RHESSys workflow, including basic skills and concepts as they are needed. While not required to get going, the resources below provide additional background if you are new to any of these topics or would like to learn more.
 
--   **General Modeling**: Familiarity with basic modeling concepts such as parameters, calibration, validation, and objective functions.
--   **R/Rstudio**: Basic familiarity with R and RStudio will be useful, as many of the tools used in this manual are R-based.
--   **GIS and Raster/Vector**: Basic familiarity with GIS and common spatial data formats will help with preparing model inputs.
--   **Unix/Linux environment**: Basic familiarity with using a terminal, running commands, navigating directories, and editing text files will be useful for installing and operating RHESSys
--   **Git/GitHub**: Basic familiarity with Git and GitHub will help when obtaining RHESSys and working with model versions.
-
-If you are new to any of these topics, don't worry---you can still work through the manual. We provide guidance and links to resources where additional background may be helpful.
+-   **General Modeling**: Familiarity with basic modeling concepts such as parameters, calibration, validation, and objective functions. These concepts are introduced throughout the manual as they become relevant to the RHESSys workflow.
+-   **R/Rstudio**: Basic familiarity with R and RStudio will be useful, as many of the tools used in this manual are R-based. If you are new to R and Rstudio or want to learn more, see [R for Data Science](https://r4ds.hadley.nz/) for an introduction, [Hands-On Programming with R](https://rstudio-education.github.io/hopr/index.html) for a beginner-friendly introduction to programming in R, and [Getting started with R and RStudio](https://ourcodingclub.github.io/tutorials/intro-to-r/) from [Coding Club](https://ourcodingclub.github.io/), which offers a number of introductory tutorials. If you prefer learning through video, you'll also find many introductory R and RStudio tutorials on YouTube.
+-   **GIS and Raster/Vector data**: Basic familiarity with GIS and common spatial data formats will help with preparing model inputs. If you are new to GIS or want to learn more, Data Carpentry's [Introduction to Geospatial Concepts](https://datacarpentry.github.io/organization-geospatial/) provides a beginner-friendly lesson to core geospatial data concepts, and [Geocomputation with R](https://r.geocompx.org/) provides an introduction to spatial data science in R.
+-   **Unix/Linux environment**: Basic familiarity with using a terminal, running commands, navigating directories, and editing text files will be useful for installing and operating RHESSys. If you are new to the command line or want to learn more, see [The basics of working on the UNIX command line](https://computing.stat.berkeley.edu/tutorial-unix-basics/?utm_source=chatgpt.com), and [Software Carpentry: The Unix Shell](https://swcarpentry.github.io/shell-novice/?utm_source=chatgpt.com).
+-   **Git/GitHub**: Basic familiarity with Git and GitHub will be useful when obtaining RHESSys and working with model versions. If you are new to Git or GitHub, [GitHub Skills](https://learn.github.com/skills) provides interactive, hands-on lessons for learning the basics of GitHub and version control.
+-   **Docker**: Provides a way to run RHESSys in a preconfigured software environment, without having to install and configure all of the RHESSys dependencies individually. You do not need prior experience with Docker to follow the installation instructions in this manual. If you would like to learn more about Docker before getting started, see the[Docker documentation](https://docs.docker.com/get-started/docker-overview/).
 
 ## Conventions
 
-This manual uses consistent formatting, icons, and visual cues to distinguish commands, file names, code, important notes, and other types of information. The conventions below will help you interpret these elements as you work through the manual.
+This manual uses consistent formatting, icons, and visual cues to distinguish commands, file names, code, important notes, and other types of information. The conventions below will help you interpret these elements as you work through the manual and recognize what to enter, what to modify, and what to expect as you work through examples. (This is a placeholder for now. As I decide what different elements to use I'll edit this table)
 
 | Element        | Meaning                                                                              |
 |:-----------------------------------|:-----------------------------------|
@@ -28,44 +27,48 @@ This manual uses consistent formatting, icons, and visual cues to distinguish co
 
 ## Manual Structure
 
-This manual follows the workflow of developing a RHESSys modeling project, beginning with project design and progressing through data preparation, model setup, simulation, and evaluation. Chapters are organized around the major components of this workflow, with each building on concepts and materials introduced earlier.
+This manual is organized around the workflow of developing a RHESSys modeling project. We start with project design and planning, then work our way through data preparation, model setup, simulation, and evaluation. That's roughly the order you'll move through a RHESSys project---but don't expect to follow it exactly. In practice, you'll often move back and forth between steps as you make decisions, discover problems, and refine your model.
 
-### There are two ways to use the book:
+The sections and chapters build on one another, introducing concepts and materials as they become relevant. Throughout the manual, we'll use exercises and an example dataset to work through the RHESSys workflow. You can follow along with the example data as you learn, seeing how the different pieces of a RHESSys project come together. Once you're comfortable with the workflow, you can apply the same approach to your own data and research questions.
 
 #### Follow the workflow
 
-For a new RHESSys user, work through the chapters in sequence. This provides the context and materials needed for each subsequent step.
+If you are new to RHESSys, we recommend working through the chapters in sequence. This provides the context and materials needed for each step and helps you build a complete understanding of the RHESSys workflow.
 
 #### Jump to a specific topic
 
-For users who already have experience with RHESSys, use the navigation, table of contents, and links within the manual to move directly to a particular topic or procedure.
+If you already have experience with RHESSys, you can use the navigation, table of contents, and links throughout the manual to go directly to a particular topic or procedure.
 
 #### Quick start
 
-Want to get started immediately? The \[Quick Start Guide\] provides a streamlined path through the minimum steps needed to run the example RHESSys project. For a fuller understanding of the modeling workflow, we recommend working through the manual in sequence.
+Want to get started immediately? The \[Quick Start Guide\](forthcoming) provides a streamlined path through the minimum steps needed to run the example RHESSys project. For a fuller understanding of the modeling workflow, we recommend working through the manual in sequence.
 
 ## Support/Resources
 
 ### RHESSys Resources
 
--   [RHESSys GitHub repository](https://github.com/RHESSys/RHESSys) --- source code, releases/branches, issues, etc.
--   [RHESSys Wiki](https://github.com/RHESSys/RHESSys/wiki) --- detailed technical documentation and information on functionality. The current wiki includes sections for RHESSys basics, in-depth functionality, and code developers.
--   [RHESSysPreprocessing](https://github.com/RHESSys/RHESSysPreprocessing) --- a set of functions to produce the required inputs for RHESSys - notably the worldfile and flowtable. The package also contains a variety of tools and utilities to facilitate other RHESSys-related tasks.
--   [RHESSysIOinR](https://github.com/RHESSys/RHESSysIOinR)--- scripts and functions for interfacing with RHESSys in R/Rstudio and processing output. The objective of this R package is to clearly and efficiently produce R code that can be used to setup RHESSys, conduct calibrations and simulations, and process output.
--   [ParameterLibrary](https://github.com/RHESSys/ParameterLibrary) --- RHESSys parameter/default-file resources.
+The resources below provide the RHESSys software and tools for preparing and working with RHESSys, and documentation for using and understanding the model. Use these links to obtain the software and tools you will need for your RHESSys project and to find additional technical information as you work through the manual.
+
+-   [RHESSys GitHub repository](https://github.com/RHESSys/RHESSys) --- RHESSys source code, releases and branches, issues, and other project informaton
+-   [RHESSys Wiki](https://github.com/RHESSys/RHESSys/wiki) --- detailed technical documentation and information on functionality. The wiki includes sections on RHESSys basics, in-depth functionality, and code development.
+-   [RHESSysPreprocessing](https://github.com/RHESSys/RHESSysPreprocessing) --- a set of functions for producing the required inputs for RHESSys - notably the worldfile and flowtable. The package also contains a variety of tools and utilities to facilitate other RHESSys-related tasks.
+-   [RHESSysIOinR](https://github.com/RHESSys/RHESSysIOinR)--- scripts and functions for interfacing with RHESSys in R/Rstudio and processing model output. The package is designed to support RHESSys setup, calibration and simulation, and output processing.
+-   [ParameterLibrary](https://github.com/RHESSys/ParameterLibrary) --- RHESSys parameter and default-file resources.
 
 ### Software and Tools
 
--   [R](https://www.r-project.org/)/ [RStudio](https://posit.co/products/open-source/rstudio)
--   [Git](https://git-scm.com/) / GitHub
--   GIS resources
--   Unix/Linux or terminal resources
+The tools below are used throughout the workflow described in this manual. Use the links to download the software or access its documentation and learning resources.
+
+-   [R](https://www.r-project.org/) --- statistical computing, data analysis, and visualization.
+-   [RStudio](https://posit.co/products/open-source/rstudio) --- an integrated development environment (IDE) for working with R.
+-   [Git](https://git-scm.com/) --- version control software used to obtain and manage RHESSys code and related resources.
+-   [GitHub](https://github.com/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F&source=header-home) --- used to host RHESSys repositories, where RHESSys code and tools can be obtained. A GitHub account is not required to download and use RHESSys. However, if you plan to contribute to the code or other project files,you will need a GitHub account to manage and share your changes.
+-   [Docker](https://www.docker.com/products/docker-desktop/) --- a platform for running RHESSys in a preconfigured software environment. Docker is the recommended approach for new users and for Windows users.
 
 ## Getting Help
 
--   FAQ - answers to common issues and questions that users have encountered
--   GitHub Issues - report a bug or ask for help
--   User/community resources
+-   [FAQ](https://github.com/RHESSys/RHESSys/wiki/Troubleshooting) - answers to common issues and questions that users have encountered (an actual FAQ will be developed, for now the link is to some common troubleshooting help)
+-   [RHESSys Issues](https://github.com/RHESSys/RHESSys/issues) - report a bug, ask for help, search issues & resolutions posted by other users
 
 ## About the Authors
 
