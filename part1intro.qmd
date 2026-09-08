@@ -3,10 +3,12 @@
 
 
 # 
+This part will help you understand what RHESSys can do, decide whether it is a good fit for your project, and begin preparing for a RHESSys modeling project. Along the way, you will:
 
--   This part is about understanding the logic of this tool and setting the computational environment
--   intro to what is covered in the section
--   expected outcome for this section: functioning modeling environment and clear strategic plan
+-   Become familiar with the overall workflow of a RHESSys modeling project, and with some key concepts and terminology
+-   Learn how to set up your modeling environment, consider important aspects of project design, and explore the example dataset
+
+By the end of this part, you will have a foundation for moving forward with your own RHESSys modeling project.
 
 # 
 

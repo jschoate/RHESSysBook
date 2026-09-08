@@ -2,89 +2,341 @@
 
 ## Setup options
 
-(description of each, who should use, when to use, recommendation, link to corresponding install instructions)
+There are several ways to install and run RHESSys, and the best option depends on how you plan to use it and the computing environment you are working in. If you are new to RHESSys, you will probably want to use Docker---the simplest option for getting up and running quickly, without wading through more complicated installation procedures you do not need. This can also be a good choice for experienced users who are primarily interested in running RHESSys and do not need to modify or work directly with the code. Windows users should use this option, since RHESSys does not currently support a local installation on Windows. It is also a good choice if you are working in a standard virtual machine through a cloud service provider.
 
-### [Local Installation (macos, Linux)](#macos)
+If you plan to work directly with the RHESSys source code to develop or modify model capabilities, a local installation on macOS or Linux may be a better fit. If you plan to run RHESSys on an HPC cluster, including an HPC cluster deployed through a cloud service (such as AWS ParallelCluster) where Docker is not available, you can use an Apptainer/Singularity container instead.
 
--   more advanced users
--   users who want more flexibility
--   rhessys developers
+This chapter describes these three options and helps you choose the one that best fits your needs. You do not need to learn all three approaches.
 
 ### [Containerized setup (Docker)](#docker)
 
--   beginners - any platform
--   Windows users (local install not supported on windows)
--   portability
+Docker is like a shipping container system for software. It is a platform that packages an application along with the libraries and other software it needs into its own neat, sealed digital container, so you don't have to install those components individually on your computer. RHESSys is packaged into an environment called a Docker image that contains the RHESSys binary and its required dependencies in a ready-to-run package that can run consistently on different computer platforms. Docker uses this image to create a container on the computer or computing environment where you will be running RHESSys.
 
-### [HPC/Cloud (SIF/Singularity)](#sif)
+#### **Why use it?**
 
--   high-performance computing environments
--   cluster users
--   large scale, high resolution simulations
+-   Quick and relatively easy to set up
+-   Avoids installing and managing RHESSys dependencies individually
+-   Provides a consistent and portable environment
+-   Can be used on local computers and standard cloud virtual machines
+
+#### **Best for**
+
+-   Beginners
+-   Windows users
+-   Users working in standard cloud virtual machines
+-   Users who primarily want to run RHESSys rather than modify or contribute to the source code
+
+#### **Platforms**
+
+-   Windows
+-   macOS
+-   Linux
+-   Standard cloud virtual machines
+
+**Recommended** for most users.
+
+------------------------------------------------------------------------
+
+### [Local setup (macOS, Linux)](#macos)
+
+A local installation gives you more control over RHESSys and how you work with the model. Instead of running RHESSys from a pre-built container, you install and compile the model directly on your computer. This gives you direct access to the RHESSys source code and lets you modify and develop the model on your local system.
+
+#### **Why use it?**
+
+-   Easily update your local code with the latest changes to the source code
+-   Direct access to the RHESSys source code for modifying and making changes to the model
+-   Ability to experiment with new equations, processes, or model capabilities and test those changes
+-   Contribute changes back to the RHESSys source code
+-   Makes it easier to use local debugging and development tools
+-   Can integrate directly with other software/tools installed on your computer
+
+#### **Best for**
+
+-   Users developing, modifying or contributing to RHESSys
+-   Users who want to experiment with new model processes or approaches
+-   RHESSys developers and contributors
+-   Advanced users who want greater control over their modeling environment
+-   Users developing custom workflows or that require close integration with other locally installed software or models
+
+#### **Platforms**
+
+-   macOS
+-   Linux
+-   Not supported on Windows
+
+**Keep in mind** a local installation requires you to install and manage RHESSys and its dependencies yourself. This gives you more control over the modeling environment, but it also means there are more components to configure and maintain.
+
+### [HPC environments (Apptainer/Singularity)](#sif)
+
+If you plan to run RHESSys on a high-performance computing (HPC) cluster, you can use Apptainer or Singularity to run RHESSys in a container. These are container systems similar to Docker, but designed to work well on HPC systems where Docker may not be available. Like Docker, they package RHESSys and the software it needs together, so you don't have to install all of its dependencies directly on the HPC system. This includes HPC clusters set up through cloud services such as AWS ParallelCluster.
+
+#### **Why use it?**
+
+-   Ability to run RHESSys on HPC clusters where Docker is not available
+-   Avoid the time, expense, and complications of compiling RHESSys from source on a cloud VM
+-   Allows you to use greater computing resources for large or computationally intensive simulations
+-   Ability to run large-scale or high-resolution simulations that may be impractical on a local computer
+-   Ability to run many RHESSys simulations in parallel, which can greatly reduce the time needed for computationally intensive modeling tasks
+
+#### **Best for**
+
+-   Users running RHESSys on an HPC cluster
+-   Large-scale or high-resolution modeling projects
+-   Computationally intensive simulations
+-   Users who need access to more computing resources than are available on a local computer
+
+#### **Platforms**
+
+-   HPC clusters
+-   HPC clusters deployed through cloud services, such as AWS ParallelCluster
+
+**Keep in mind** Apptainer or Singularity may not be installed on your HPC system by default. Depending on the system, you may need to install it yourself or ask your system administrator for assistance.
 
 ## RHESSys Installation Steps
 
-(link to instructional video or videos if each option should be separate)
+(link to instructional video)
 
-### MacOS {#macos}
+### Docker installation {#docker}
 
-(include section for Linux as well if necessary or where differs)
+Before you can install the RHESSys Docker image, you first need to install Docker itself, or more specifically, the Docker Engine. Docker containers are designed to run using the Linux kernel, so on Linux, Docker Engine can run containers directly on the operating system. However, because macOS and Windows use different operating system kernels, Docker Desktop (which packages the Linux environment and Docker engine) is needed to run Linux containers on these systems.
 
-#### [Code Dependencies and Operational Requirements]{.underline}
+Docker only needs to be running in the background, so you don't need to do anything in the Desktop graphical interface. All of the instructions for running RHESSys with Docker will be done from the command line in a terminal window.
 
--   Terminal application
--   Xcode Command Line Tools (compilers/build tools)
--   Privileges (i.e. Administrator access)
--   Homebrew
--   Git
--   Libraries (i.e. NetCDF)
+1.  Download and Install Docker\
+    Docker maintains platform specific installation procedures which are linked below.
+
+    -   Local computer
+
+        -   [Windows](https://docs.docker.com/desktop/setup/install/windows-install/) - Docker Desktop
+        -   [macOS](https://docs.docker.com/desktop/setup/install/mac-install/) - Docker Desktop
+        -   [Linux](https://docs.docker.com/engine/install/) - Docker Engine for the Linux distribution you're using\
+            While Docker Desktop is available for Linux, it actually runs it inside a virtual machine. To keep it simple, we are recommending you only install Docker Engine as that is all you will need to run RHESSys.
+
+    -   [Cloud virtual machine](https://docs.docker.com/engine/install/) - Docker Engine for the Linux distribution you're using\
+        Docker Desktop is not used on a cloud virtual machine, it runs the command line interface and daemon only. Cloud virtual machines are essentially remote Linux computers so only Docker Engine is needed.
+
+2.  Start and test Docker\
+    After installing Docker Desktop on Windows or macOS, launch the Docker Desktop application to start the Docker Engine (Start menu on Windows, Applications on macOS). Wait until Docker has finished starting before continuing with the RHESSys installation. On Linux, Docker Engine typically starts automatically as a system service.
+
+    -   To confirm that Docker is running, for all platforms, open a terminal window
+
+    -   Type the command
+
+        <div>
+
+        | `docker info`
+
+        </div>
+
+    -   If Docker is running, information about your Docker installation will be displayed. If Docker is not running, Docker will return an error indicating that it cannot connect to the Docker daemon.
+
+    -   If Docker is not running on Windows or macOS, it means you haven't launched the Desktop application.
+
+    -   If Docker is not running on Linux, start it manually - in the terminal window type the command
+
+        <div>
+
+        | `sudo systemctl enable –now docker`
+
+        </div>
+
+3.  Get the RHESSys Docker image\
+    Two RHESSys image's are maintained on the Docker Hub, *trunk* and *develop*. Those names are the RHESSys Image *tags* that identify which version of the RHESSys code an image was built on. We will be working with the stable *trunk tag* and what we recommend you generally use.\
+
+    -   In a terminal window, run
+
+        <div>
+
+        | `docker pull rhessys/rhessys:trunk`
+
+        </div>
+
+    To confirm that the RHESSys image has been downloaded successfully:
+
+    -   In a terminal window, run
+
+        <div>
+
+        | `docker images rhessys/rhessys`
+
+        </div>
+
+    -   This should return, for example:
+
+        |                 |       |          |              |      |
+        |-----------------|-------|----------|--------------|------|
+        | REPOSITORY      | TAG   | IMAGE ID | CREATED      | SIZE |
+        | rhessys/rhessys | trunk | XXXXXXX  | how long ago | XX   |
+
+        -   REPOSITORY: the image name: rhessys/rhessys
+        -   TAG: which version/tag you downloaded, such as trunk (or develop)
+        -   IMAGE ID: Docker's identifier for that particular image
+        -   CREATED: how long ago that image was built
+        -   SIZE: how much disk space the image occupies
+
+That's all you need to do to set up Docker for now. You don't need to learn how to work with Docker containers just yet. We'll come back to that later, when you begin running RHESSys.
+
+### Local installation (macOS, Linux) {#macos}
+
+RHESSys uses Git for version control, and the code is maintained on the hosting service GitHub. You will need certain software and development tools installed on your local machine before you can retrieve and compile the code.
+
+#### [What you will need]{.underline}
+
+Install in the order below if you do not already have them installed.
+
+-   Terminal - included with macOS and Linux
+
+-   [Xcode Command Line Tools](https://developer.apple.com/documentation/xcode/installing-the-command-line-tools) - required on macOS for the compilers and build tools
+
+    -   Check if already installed - in a terminal, run: `xcode-select -p`\
+        If a path is returned, the tools are installed. If you get an error, install them using Apple's instructions, run `xcode-select –install`\
+
+-   [Homebrew](https://brew.sh/) - used on macOS to install several RHESSys dependencies
+
+    -   Check if already installed on macOS - in a terminal, run: `brew –version`\
+        If it is installed, it will return the version number. If not, use Homebrew's official installation script in your terminal
+
+    -   Linux distributions (Debian/Ubuntu) ship with a package manager ([apt](https://ubuntu.com/server/docs/how-to/software/package-management/)) already built in, so Homebrew is not necessary on Linux. To refresh apt's local index of available packages/version from the repositories, you may need to run: `sudo apt-get update`
+
+-   [Git](https://github.com/git-guides/install-git) - used to obtain the RHESSys source code
+
+    -   Check if already installed - in a terminal run: `git version`\
+        If installed, it will return the version number. If not, use GitHub's installation guide for the platform you are working on.
+
+-   RHESSys dependencies
+
+| Dependency            | Check command                                         | macOS package                  | Linux package        |
+|------------------|-------------------|------------------|------------------|
+| Compiler (clang)      | `clang --version`                                     | *(preinstalled via Xcode CLT)* | `build-essential`    |
+| make                  | `make --version`                                      | *(preinstalled via Xcode CLT)* | `build-essential`    |
+| Linker (`ld`)         | `ld --version`                                        | *(preinstalled via Xcode CLT)* | `build-essential`    |
+| flex                  | `flex --version`                                      | *(preinstalled)*               | `flex`               |
+| bison                 | `bison --version`                                     | *(preinstalled)*               | `bison`              |
+| python3               | `python3 --version`                                   | *(preinstalled)*               | `python3`            |
+| pkg-config            | `pkg-config --version`                                | `pkg-config`                   | `pkg-config`         |
+| GLib                  | `pkg-config --modversion glib-2.0`                    | `glib`                         | `libglib2.0-dev`     |
+| NetCDF                | `pkg-config --modversion netcdf`                      | `netcdf`                       | `libnetcdf-dev`      |
+| Boost headers (macOS) | `ls $(brew --prefix boost)/include/boost/version.hpp` | `boost`                        | n/a                  |
+| Boost headers (Linux) | `ls /usr/include/boost/version.hpp`                   | n/a                            | `libboost-dev`       |
+| b2 (Boost build tool) | `b2 --version`                                        | `boost-build`                  | `libboost-tools-dev` |
+| libbsd                | `dpkg -s libbsd-dev`                                  | n/a                            | `libbsd-dev`         |
+| patchelf              | `patchelf --version`                                  | n/a                            | `patchelf`           |
+
+: Dependency check commands and package names for macOS and Linux (Debian/Ubuntu) {#tbl-deps}
+
+-   Install dependencies
+
+    -   macOS:\
+        `brew install pkg-config glib netcdf boost boost-build`
+
+        -   NOTE: Homebrew officially supports only the most recent three macOS releases. On older versions, expect `brew install boost` to take substantially longer, since packages are compiled from source rather than downloaded pre-built --- this is expected, not a failure. See Homebrews information on platform [version support](https://docs.brew.sh/Support-Tiers#future-macos-support) if you are working on an older operating system.
+
+    -   Linux:\
+        `sudo apt-get install –yes build-essential clang bison flex libbsd-dev libglib2.0-dev libnetcdf-dev pkg-config python3 libboost-dev libboost-tools-dev patchelf`
+
+        -   NOTE: If you are using a different version of Linux, check the documentation for your version.
+
+    -   see the appendix for compiling with OpenMP capabilities
 
 #### [Installation steps]{.underline}
 
 -   Download code from GitHub
-    -   Zip file
-    -   Clone repository (main, develop)
--   Compile
--   Shell configuration (adding to path)
+    -   You will be working in a terminal window
+    -   Clone repository
+        -   Navigate to a directory (i.e. `cd`) on your computer where you want to download and maintain your local copy of the RHESSys code
+        -   To clone the code on your local computer, type the following:\
+            `git clone https://github.com/RHESSys/RHESSys.git rhessys_git`
+            -   This will create a directory named **rhessys_git** that will contain a clone of the repository on your local computer, and will configure the online GitHub RHESSys repository as a remote repository named "origin". By convention, the RHESSys repository located on GitHub is the authoritative source of the RHESSys sourcecode.
+            -   RHESSys code is organized in two main branches within the Git repository, *trunk* and *develop*. *Trunk* is the currently live, production-ready, stable, tested branch, while day-to-day development takes place in the *develop* branch, which contains the latest code changes, experimental features, and bug fixes that may still need more testing. RHESSys releases are periodically made by merging the *develop* branch with the *trunk* branch when new changes are ready to go live. Both the *trunk* and *develop* branches automatically exist on each developer's local repository as well as on the GitHub repository. We will be working with the *trunk* branch.
+            -   [Code developers]{.underline} may wish to create "feature" branches on their local repositories to help better organize the work they are doing. This branching model: trunk, develop, and feature branches--is a simplified version of that described in "[A successful Git branching model](https://nvie.com/posts/a-successful-git-branching-model/)". This short document also explains how Git works; it is highly recommended that RHESSys [developers]{.underline} read this document.
+    -   Navigate to the directory where you downloaded the code from GitHub, run\
+        `cd <path>/rhessys_git`).
+        -   You can see what branch you are on by running: `git branch`
+        -   Within rhessys_git, to see the included directories, list the files with: `ls`\
+            *rhessys* - the model code files\
+            *FIRE* - files for the FIRE spread model\
+            *util* - additional operational tools\
+            *Testing* - a test case to test new code changes against
+    -   Generate the WMFire library
+        -   Move into the FIRE directory, run `cd FIRE`
+        -   generate the WMfire library with
+            -   macOS:\
+                `b2 cxxstd=17 cxxflags=-Wno-c++11-narrowing include=$(brew --prefix boost)/include release`\
+                (By doing some simple edits to the WMFire source files, we can eliminate cxxstd and cxxflags on that command line so it would just be:\
+                `b2 include=$(brew –prefix boost)/include release`
+
+            -   Linux:\
+                `b2 release`
+
+            -   The b2 command will create a new sub-directory that contains the library file, you can find the full path to the library file and it's name by running:\
+                `find build -name "libwmfire*"`\
+                libwmfire.dylib (macOS) - or - libwmfire.so (Linux)
+    -   Copy the libwmfire file into a *rhessys_git/lib* sub-directory that the makefile is expecting, run:\
+        `mkdir -p ../lib`\
+        `cp $(find build -name "libwmfire*") ../lib/`
+-   Compile RHESSys
+    -   Move to the rhessys directory, if you are still in the FIRE directory run `cd ../rhessys`
+    -   The rhessys directory contains a number of sub-directories that contain different parts of the code, to see them run the list command: `ls`
+    -   To compile RHESSys (with Fire capabilities), run:\
+        `make clean all wmfire='T'`\
+        The *clean* target deletes all previously compiled object files so no outdated code interferes with your new build.\
+        The *all* target compiles the source code and the executable binary.\
+        The *wmfire* variable tells it to couple WMFire to the RHESSys code.\
+        Wait for the process to finish. This will generate the executable called rhessys with the version number, i.e. rhessys7.5
+    -   Tell the RHESSys executable where to find the WMFire library file
+        -   macOS: run `install_name_tool -add_rpath @executable_path/../lib rhessys7.5` (edit for the rhessys version you are using)
+        -   linux: run `patchelf --set-rpath '$ORIGIN/../lib' rhessys7.5` (edit for the rhessys version you are using)
 -   Verify installation
--   Common issue and solutions
+    -   While in the rhessys directory, type the executable rhessysX.X (i.e. rhessys7.5) on the command line, run: `rhessys7.5`\
+        If it returns `FATAL ERROR:  Cannot open world file`\
+        If you see an error about a missing worldfile, don't worry---that means RHESSys was successfully found and started. You haven't provided it with the information it needs to run a simulation yet.\
+        You have successfully installed RHESSys!
 
-### Docker
+### HPC cluster installation - Apptainer/Singularity {#sif}
 
--   Install Docker Desktop on local computer
-    -   obtain from https://www.docker.com/products/docker-desktop/
-    -   this provides the Docker engine/environment needed to run Linux containers on local computer
-    -   the background Docker engine/VM that actually runs containers on macOS
--   Start Docker Desktop software on local computer
-    -   Docker needs to be running in the background, but user doesn't have to do anything in its graphical interface.
--   Open a terminal window
-    -   user will be running docker in the terminal environment
-    -   the interface where you give Docker commands
--   Pull the RHESSys image
-    -   The image is the reusable RHESSys environment
-    -   This downloads the RHESSys image from Docker Hub onto the user's computer.
--   Create and start a Docker container from that image
-    -   This is where the user specifies how they want the container configured — importantly, including how the RHESSys project files on the computer will be made available inside the container
-    
--   useful commands that should be included in instructions:
-    -   docker images rhessys/rhessys
-        -   this tells you what image(s) docker has on your local computer
-    -   docker ps -a
-        -   That will show all containers, including stopped ones.
-    -   docker inspect <container-name>
-    
-    
--   Image (rhessys/rhessys) → the RHESSys software package/template stored in Docker.
--   Container → an instance created from that image, stored in your Docker environment.
--   Running container → a container whose main process is currently running.
--   Exited container → a container that exists but whose process has stopped.
--   Created container → a container that exists but has never been started.
+Apptainer/Singularity software can convert the RHESSys Docker image directly into a .sif file to use in HPC cluster environments and cloud based cluster environments like AWS ParallelCluster for example.
 
--   Docker Desktop on macOS runs Linux containers inside Docker's Linux VM, so technically the container filesystem isn't just an ordinary folder sitting somewhere in your Mac's Finder. But from your perspective, yes, they're local Docker objects belonging to your Mac's Docker Desktop installation.
+Most HPC clusters have Apptainer preinstalled, so you may just need to load it.
 
-### SIF
+-   Log into your cluster
+-   Load the pre-installed module, run:\
+    `module load apptainer` (or `module load singularity`)
+-   To covert the RHESSys Docker image into a .sif file, run:\
+    `apptainer pull rhessys.sif docker://rhessys/rhessys:trunk`
 
--   Obtaining RHESSys .sif image
+For a cloud cluster environment (like AWS ParallelCluster), Apptainer has to be installed as part of cluster setup first. (exploring an alternative for this, or a better workflow)
+
+-   Create an install script that installs Apptainer for your cluster's OS, i.e. for Ubuntu: #!/bin/bash\
+    apt-get update\
+    apt-get install -y software-properties-common\
+    add-apt-repository -y ppa:apptainer/ppa\
+    apt-get update\
+    apt-get install -y apptainer
+
+-   Upload the script to S3: `aws s3 cp install_apptainer.sh s3://my-bucket/scripts/`
+
+-   Add it to your cluster config under CustomActions → OnNodeConfigured, on both the head node and every Slurm compute queue (so it installs on the head node and on any compute node that boots). Put this is a yaml file:\
+    HeadNode:\
+    CustomActions:\
+    OnNodeConfigured:\
+    Script: s3://my-bucket/scripts/install_apptainer.sh\
+    Scheduling:\
+    SlurmQueues:\
+    Name: queue1\
+    CustomActions:\
+    OnNodeConfigured:\
+    Script: s3://my-bucket/scripts/install_apptainer.sh
+
+-   Create (or update) the cluster with this config:\
+    `pcluster create-cluster --cluster-name mycluster --cluster-configuration cluster-config.yaml`
+
+Generating the .sif (once Apptainer is installed on the cluster):
+
+-   Log into the head node:\
+    `pcluster ssh --cluster-name mycluster -i your-key.pem`
+-   No module to load --- Apptainer is just on the PATH already, since it was installed system-wide by the bootstrap script
+-   Convert the Docker image the same way as on a traditional cluster:\
+    `apptainer pull rhessys.sif docker://rhessys/rhessys:trunk`
 
 ## Installing Workflow & Analysis Tools
 
@@ -92,13 +344,36 @@
 
 ### R Ecosystem
 
--   R (The engine)
--   RStudio (The interface)
--   Standard Packages (Extensions - Libraries that expand functionality)
+R is a free software environment for statistical computing and graphics. It compiles and runs on a wide variety of UNIX platforms, Windows and Mac OS X. We have many workflow tools developed for use in R/Rstudio that you will use in these tutorials and can adapt to your own project.
+
+-   Download [R](http://www.r-project.org/) (The engine)
+-   Choose the preferred CRAN mirror, download and install.
+-   Install [Rstudio](https://www.rstudio.com/) (The interface)\
+    Rstudio requires that R is installed, so install R first.
+-   Start the Rstudio program
+-   Install standard packages (Extensions - Libraries that expand functionality)
+    -   `install.packages("tidyverse)`
+    -   `install.packages("xfun")`
+    -   `install.packages("chron")`
+    -   `install.packages("sf")`
+    -   `install.packages("terra")`
+    -   `install.packages("ggpubr")`
+    -   `install.packages("formattable")`
+    -   `install.packages("lubridate")`
+    -   `install.packages("readxl")`
 
 ### WhiteboxTools for Geospatial Processing
 
+The whitebox package for R and RStudio is a R frontend wrapper for WhiteboxTools, which is an advanced, high-performance geospatial data analysis and geographic information system (GIS) platform. You will use this to generate the necessary spatial data. You will be working in Rstudio for the following:
+
+-   Install the whitebox package:\
+    `whitebox::install_whitebox()`
+-   Check if the whitebox binary can be found by R\
+    `whitebox::check_whitebox_binary()`
+
 ### RHESSys-Specific R packages
 
--   RHESSysPreprocessing
--   RHESSysIOinR
+-   Install the RHESSysPreprocessing package:\
+    `devtools::install_github("RHESSys/RHESSysPreprocessing")`
+-   Install the RHESSysIOinR package:\
+    `devtools::install_github("RHESSys/RHESSysIOinR")`

@@ -5,6 +5,16 @@
 -   The cost of poor planning
 -   Model design is a sequence of interconnected decision
 
+Key concepts and terminology - moved this from Intro to here - as this is when these concepts begin to be introduced
+
+-   Spatial hierarchy: RHESSys organizes the landscape into nested spatial units (define each - basin, hillslope, zone, patch, stratum), with different processes represented at different levels of the hierarchy.
+-   Spatial/Temporal step (i.e., basin daily, patch monthly)
+-   Spatial extent: The geographic area included in a simulation, such as a small experimental watershed or a larger regional watershed.
+-   Spatial resolution: The size or level of detail at which the landscape is represented. Finer spatial resolution provides greater spatial detail but generally requires more data, processing, and computational resources.
+-   Spatial partitioning: The process of dividing a landscape into spatial units that represent differences in terrain, vegetation, soils, or other characteristics relevant to the model.
+-   Temporal extent: The period of time represented by a simulation or dataset, such as the years covered by climate inputs or observed streamflow used for model evaluation.
+-   temporal resolution: daily versus hourly data (maybe need in terms of what output they need for project, i.e. if they need very fine scale temporal data, is what they need output at an hourly timestep?) -   Spatial/Temporal step (i.e., basin daily, patch monthly)
+
 ## Model Purpose (The Anchor)
 
 -   Establish the scientific objectives of the project, is the purpose to:

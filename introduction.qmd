@@ -1,17 +1,10 @@
----
-
-editor: 
-  markdown: 
-    wrap: 72
----
-
 # Introduction (The Model)
 
 ## Overview of RHESSys
 
 ### What RHESSys is
 
-RHESSys (Regional Hydro-Ecologic Simulation System) is a process-based model of the interactions among energy, water, carbon, and nutrient cycles in the terrestrial environment. As a process based model, RHESSys uses established mechanistic understanding to simulate water, carbon and nutrient fluxes and stores at scales from plots to regions. The model can estimate the trajectories of a wide-range of eco-hydrologic variables including but not limited to vegetation growth and/or decline, soil and litter organic matter accumulation and decomosition, snow accumulation and melt, runoff and streamflow generation and groundwater recharge. The model is both spatial and temporally dynamic, which allows RHESSys to simulate how these energy/water/carbon/nutrient stores and fluxes are distributed over space and evolve through time. The model uses meteorological inputs such as precipitation and temperature, as well as topographic, species-related vegetation, soil, and land use parameters to create this place-based dynamic representation of landscapes.
+RHESSys (Regional Hydro-Ecologic Simulation System) is a process-based model of the interactions among energy, water, carbon, and nutrient cycles in the terrestrial environment. As a process based model, RHESSys uses established mechanistic understanding to simulate water, carbon, and nutrient fluxes and stores at scales from plots to regions. The model can estimate the trajectories of a wide-range of eco-hydrologic variables including but not limited to vegetation growth and/or decline, soil and litter organic matter accumulation and decomosition, snow accumulation and melt, runoff and streamflow generation and groundwater recharge. The model is both spatially and temporally dynamic, which allows RHESSys to simulate how these energy/water/carbon/nutrient stores and fluxes are distributed over space and evolve through time. The model uses meteorological inputs such as precipitation and temperature, as well as topographic, species-related vegetation, soil, and land use parameters to create this place-based dynamic representation of landscapes.
 
 RHESSys is designed as a community model, and as such, the representation of specific processes has evolved over time. Developments reflect new model application areas and new findings from field based studies. Key developments include coupling with a fire spread and fire effects model, accounting for overstory and understory vegetation, adding complexity/physical realism to vegetation water/carbon/nutrient cycling mechanisms, representation of water pathways that occur at different scales, including deep groundwater flowpaths, surface flow redirection by impervious surfaces, hillslope-scale downslope lateral subsurface redistribution, and plot-scale water transfers. The main code for RHESSys is maintained on GitHub, which tracks the evolution of the model.
 
@@ -21,55 +14,92 @@ RHESSys can be used as a virtual laboratory to investigate how and why systems b
 
 As a digital twin, RHESSys can provide a place-based estimation of how water resources, carbon sequestration, nutrient export, as well as flood and fire risk, may change under a changing climate or with different land management practices. For example, RHESSys has been used to estimate how seasonal streamflow may change with earlier snowmelt for specific Sierra Nevada watersheds in California, and how summer streamflow may change for watersheds in the Spanish Pyrenees as abandoned pastures are invaded by shrubs. Because RHESSys can be run over a wide range of scenarios, it can be used to explore interactions between land management and climate. For example, RHESSys has been used to estimate the impact of fuel treatments on fire size across historic and possible future climates.
 
-As a virtual laboratory, RHESSys can be used to understand how different mechanisms influence behavior. For example, RHESSys has been used to show how sharing of water between trees and neighboring open space or forest gaps can significantly influence forest drought vulnerability and forest responses to thinning. In this way, RHESSys can be used to help us understand the impact not only of what we know—but also what we don't know. For instance, RHESSys has been used to compare how different assumptions regarding species-specific plant strategies for allocating the carbon they photosynthesize to leaves, stems, and roots influence long-term productivity and carbon sequestration. Similarly, RHESSys can be used to explore the sensitivity of water/carbon/nutrient fluxes to uncertainty and variation in key parameters. For example, RHESSys has been used to estimate how uncertainty or unmeasured spatial variation in soil properties or within species ecophysiological properties impact estimation of streamflow, forest productivity, and drought response.
+As a virtual laboratory, RHESSys can be used to understand how different mechanisms influence behavior. For example, RHESSys has been used to show how sharing of water between trees and neighboring open space or forest gaps can significantly influence forest drought vulnerability and forest responses to thinning. In this way, RHESSys can be used to help us understand the impact not only of what we know---but also what we don't know. For instance, RHESSys has been used to compare how different assumptions regarding species-specific plant strategies for allocating the carbon they photosynthesize to leaves, stems, and roots influence long-term productivity and carbon sequestration. Similarly, RHESSys can be used to explore the sensitivity of water/carbon/nutrient fluxes to uncertainty and variation in key parameters. For example, RHESSys has been used to estimate how uncertainty or unmeasured spatial variation in soil properties or within species ecophysiological properties impact estimation of streamflow, forest productivity, and drought response.
 
 ### Strengths
 
-- Provides Integrated/Coupled Ecohydological Modeling - that links energy, water, nutrients and carbon cycles. For example, evapotranspiration is both influenced by vegetation and influences how vegetation changes over time.
-- Accounts for heterogeneity in stores/fluxes and parameters over space,and allows users to determine the resolution of spatial averaging (or scale of the fundamental modeling unit)
-- Accounts for lateral transfers and connections between these modeling units - thus model will generate different water availability in riparian areas because it moves water laterally between modelling units
-- Supports the integration of human modifications to the landscape into the model - including vegetation management, building roads and adding impervious areas or surface detention storage, adding irrigation and fertilizer inputs
-- When modeling fire, accounts for both climate and fuel effects on fire frequency, vegetation structural effects on fire severity and how vegetation recovers following fire
-- Is flexible in required inputs - for example, RHESSys will estimate relative humidity if it is not available, but the model can also use observed (or external model) relative humidity inputs
-- Has been applied in a wide range of environments - both humid and arid, forests and grasses, urban and non-urban - this previous work has helped to improve RHESSys and previous publications that compare RHESSys with measured data help to build confidence in the model
+-   Provides Integrated/Coupled Ecohydological Modeling - that links energy, water, nutrients and carbon cycles. For example, evapotranspiration is both influenced by vegetation and influences how vegetation changes over time
+-   Accounts for heterogeneity in stores/fluxes and parameters over space, and allows users to determine the resolution of spatial averaging (or scale of the fundamental modeling unit)
+-   Accounts for lateral transfers and connections between these modeling units - thus the model will generate different water availability in riparian areas because it moves water laterally between modeling units
+-   Supports the integration of human modifications to the landscape into the model - including vegetation management, building roads, adding impervious areas or surface detention storage, and adding irrigation and fertilizer inputs
+-   When modeling fire, accounts for both climate and fuel effects on fire frequency, vegetation structural effects on fire severity, and how vegetation recovers following fire
+-   Is flexible in required inputs - for example, RHESSys will estimate relative humidity if it is not available, but the model can also use observed (or external model) relative humidity inputs
+-   Has been applied in a wide range of environments - both humid and arid, forests and grasses, urban and non-urban - this previous work has helped to improve RHESSys and previous publications that compare RHESSys with measured data help to build confidence in the model
 
 ### Limitations
 
-- High data demands
-- Can be computationally intensive
+RHESSys can represent a wide range of interacting ecological and hydrological processes, but that comes with some trade-offs. Some limitations relate to the practical challenges of setting up and running a RHESSys simulation, while others reflect processes that RHESSys does not represent, or represents only in a simplified way.
 
-There are also some key processes that are not included in RHESSys that may be important for specific applications. These include: 
+#### General limitations
 
-- sediment transport and erosion 
-- vegetation reproduction 
-- species change 
-- the influence of the land-surface on the atmosphere (e.g vegetation fluxes changing local climate) 
-- other nutrients (such a P) that may be limiting,
+-   High data and parameter requirements: RHESSys requires a substantial amount of spatial, climate, soil, and vegetation information. Some of these data may be difficult to obtain at the spatial and temporal resolution needed for a particular study. The model also has many parameters, some of which can be difficult to measure or constrain with observations.
+-   Calibration and uncertainty: Because RHESSys represents many interacting processes, calibration can be challenging. There may be multiple combinations of parameters that produce similar results, and limited observations can make it difficult to determine whether the model is representing the underlying processes correctly. Uncertainty can come from input data, parameter values, model structure, and initial conditions. RHESSys simulations may require long spin-up periods to establish reasonable initial conditions for the hydrologic and ecologic systems, particularly for carbon and nitrogen pools. This adds to the computational effort and can introduce additional uncertainty when the initial state of the ecosystem is not well known.
+-   Computational demands: RHESSys can require substantial computing resources, particularly as the size of the study area, spatial resolution, simulation period, or number of scenarios increases. A large watershed simulated at fine spatial resolution over many decades may require considerably more processing time and storage than a smaller watershed or shorter simulation. There is no single spatial or temporal scale at which RHESSys should be used; the practical limits depend on the research question, available data, and computational resources.
 
-The fire model cannot account fine-scale fire behavior, thus while it can estimate fire regimes, fire-return intervals and fire severity, it cannot model the movement and intensity of fire during a particular event.
+#### Specific process representation
 
-### Comparison of RHESSys to other models
+There are also some key processes that are not included or are represented in a simplified way in RHESSys that may be important for specific applications. These include:
 
-- what this model is appropriate for
-- what the trade-offs are
+-   sediment transport and erosion
+-   vegetation reproduction
+-   species change and vegetation succession
+-   the influence of the land-surface on the atmosphere (e.g vegetation fluxes changing local climate)
+-   other nutrients (such a Phosphorus) that may be limiting
+-   some aspects of groundwater and subsurface flow that may require more detailed representation for particular applications
+-   while the fire model can estimate fire regimes, fire-return intervals, and fire severity, it can not account for fine-scale fire behavior, thus it cannot model the movement and intensity of fire during a particular event.
+
+These limitations do not necessarily mean that RHESSys is not appropriate for a particular study. What matters is whether the processes that are simplified or not included are important to the question you are trying to answer. Recognizing these limitations can help you decide whether RHESSys is the right model for your study and understand what your simulation can---and cannot---tell you.
+
+### Is RHESSys the right model?
+
+There are many models available for investigating hydrological and ecological processes, and no single model is best for every research question. Models differ in the processes they represent, the spatial and temporal scales at which they operate, the level of detail with which those processes are represented, and the data and computational resources they require. Choosing a model starts with a simple question: What do you need the model to help you understand?
+
+A useful approach is to start with the simplest model that can adequately address the question and add complexity only when that complexity provides information that matters. Simple models can make underlying relationships easier to understand, require fewer inputs and parameters, and be easier to evaluate. More complex models can represent additional processes, feedbacks, and spatial variation, but they also require more data, parameterization, computation, and effort to evaluate. The goal is not to choose the most complex model. It is to choose a model whose complexity is appropriate for the question, the scale of the study, and the resources available.
+
+#### **When is RHESSys a good choice?**
+
+RHESSys is particularly useful when your research question depends on interactions among ecological and hydrological processes or on how those processes vary across a landscape. It may be a good choice when you want to:
+
+-   investigate interactions or feedbacks among vegetation, soils, water, and climate
+-   understand how processes vary across a heterogeneous landscape
+-   examine how water, carbon, or nutrient cycling responds to climate, vegetation, land management, or disturbance
+-   investigate the mechanisms underlying observed or predicted system behavior
+-   compare environmental or management scenarios
+-   understand how processes at one location affect conditions somewhere else through spatial connections and lateral transfers.
+
+RHESSys is especially effective when ecological processes are an important part of the hydrologic question, rather than simply treating vegetation as a prescribed or static component of the system. For example, understanding how climate change affects streamflow requires considering more than just changes in precipitation and temperature because components of the ecosystem such as vegetation transpiration and soil moisture also affect the water balance.
+
+#### **Consider the scale**
+
+The spatial and temporal scale of a study is another important consideration. RHESSys can represent spatial variation across a landscape and simulate processes over relatively long time periods, but increasing the size of the study area, the spatial resolution, or the length of the simulation also increases the amount of data to prepare and the computational resources required to run the model.
+
+A large watershed simulated at fine spatial resolution over many decades requires substantially more processing time and storage than a smaller study area or shorter simulation. The appropriate level of spatial and temporal detail therefore depends on the research question. Finer resolution is useful only when the additional detail helps answer the question and can be supported by the available data and computational resources.
+
+#### **The trade-offs**
+
+The additional capabilities of RHESSys come with additional effort. Developing a RHESSys simulation can require detailed spatial and climate data, vegetation and soil information, parameterization of ecological and hydrological processes, and decisions about how the landscape is represented. Calibration and evaluation can also be more involved because multiple interacting processes contribute to model behavior, and stabilizing slowly evolving carbon and nutrient pools may require substantial spin-up periods.
+
+These costs are worthwhile when the additional representation provides information that is central to the research question. They may not be worthwhile when a simpler model can answer the question adequately. The same principle applies when RHESSys does not represent a process in as much detail as the question requires. If the primary focus is a process that RHESSys treats relatively simply, another modeling approach may be more appropriate.
+
+Ultimately, choosing a model is a matter of matching model complexity to the question, the scale of the study, and the data and computational resources available. Start by identifying what you want to learn, determine which processes and spatial and temporal scales are important, and then choose the simplest model that can provide the information you need. RHESSys is most useful when its ability to represent interactions among ecological and hydrological processes provides information that is important to understanding the system being studied.
 
 ## Recommended reading/Publications
 
-RHESSys is an eco-hydrologic process-based model - and has similarities to other land-surface models (LSM), hydrologic and earth system models. The following papers provide some additional context into process-based ecohydrologic models in general
+RHESSys is a hydro-ecologic process-based model - and has similarities to other land-surface models (LSM), hydrologic and earth system models. The following papers provide some additional context into process-based ecohydrologic models in general
 
-Fatichi, S., Pappas, C., & Ivanov, V. Y. (2016). Modeling plant–water interactions: an ecohydrological overview from the cell to the global scale. Wiley Interdisciplinary Reviews: Water, 3(3), 327-368.
+Fatichi, S., Pappas, C., & Ivanov, V. Y. (2016). Modeling plant--water interactions: an ecohydrological overview from the cell to the global scale. Wiley Interdisciplinary Reviews: Water, 3(3), 327-368.
 
 To learn more about modeling workflow for coupled eco-hydrologic models see: Brookfield, A. E., Ajami, H., Carroll, R. W. H., Tague, C., Sullivan, P. L., & Condon, L. E. (2023). Recent advances in integrated hydrologic models: Integration of new domains. Journal of Hydrology, 620, 129515. (particularly the Appendix that provides guidance on Selecting an Integrated Hydrologic Model)
 
 A foundational RHESSys paper is Tague, C., Band, L. (2004) RHESSys: Regional Hydro-ecologic simulation system: An object-oriented approach to spatially distributed modeling of carbon, water and nutrient cycling, Earth Interactions 8(19): 1-42.
 
-While the Tague and Band (2004) paper provides information on some core process representation, the model has continued to evolve and many of the process representations and model capabilities have changed. The papers below highlight several key changes. Details of specific process representation and how these have evolved are discussed in relevant sections of this book as needed. Papers on specific applications, such as using the model in urban settings or using the model to track distrubance are provided in appropriate sections in this book
+While the Tague and Band (2004) paper provides information on some core process representation, the model has continued to evolve and many of the process representations and model capabilities have changed. The papers below highlight several key changes. Details of specific process representation and how these have evolved are discussed in relevant sections of this book as needed. Papers on specific applications, such as using the model in urban settings or using the model to track disturbance are provided in appropriate sections in this book.
 
 *Fire* Bart, R.R., Kennedy, M.C., Tague, C.L., McKenzie, D. (2020) Integrating fire effects on vegetation carbon cycling within an ecohydrologic model, Ecological Modelling 416: 108880. doi.org/10.1016/j.ecolmodel.2019.108880
 
 *Carbon Allocation in Plants* Garcia, E.S., Tague, C.L., Choate, J.S. (2016) Uncertainty in carbon allocation strategy and ecophysiological parameterization influences on carbon and streamflow estimates for two western US forested watersheds, Ecological Modeling 342: 19-33. doi: 10.1016/j.ecolmodel.2016.09.021
 
-Deeper Groundwater Hydrology Tague, C., Farrell, M., Grant, G., Choate, J., Jefferson A. (2008) Deep groundwater mediates streamflow response to climate warming in the Oregon Cascades, Climatic Change 86: 189-210.
+*Deeper Groundwater Hydrology* Tague, C., Farrell, M., Grant, G., Choate, J., Jefferson A. (2008) Deep groundwater mediates streamflow response to climate warming in the Oregon Cascades, Climatic Change 86: 189-210.
 
 *Soil Nitrogen Cycling* Chen, X., Tague, C.L., Melack, J.M., Keller, A.A. (2020) Sensitivity of nitrate concentration-discharge patterns to soil nitrate distribution and drainage properties in the vertical dimension, Hydrological Processes doi: 10.1002/hyp.13742
 
@@ -81,18 +111,9 @@ Forest Management Effects
 
 ![**RHESSys Modeling Workflow Overview**](images/ModelingWorkflowOverview-01.jpeg){fig-alt="RHESSys Modeling Workflow Overview" width="1000"}
 
-- Step 1: Installation - Set up the RHESSys environment
-- Step 2: Data Preparation - Gather and format spatial, climate, and validation data
-- Step 3: Preprocessing - Generate the landscape representation (Worldfile) and routing (Flowtable) input files
-- Step 4: Model Setup and Execution - Define the simulation rules and run RHESSys
-- Step 5: Calibration & Sensitivity Analysis - Condition the model (Initialize/reach equilibrium), refine parameters, validate performance
-- Step 6: Post Processing - wrangle, analyze, and visualize output data
-
-### Key concepts and terminology
-
-(define frequently used terms)
-
-- Spatial hierarchy (basin, hillslope, zone, patch, stratum)
-- Input File types (Worldfile, Header, Flowtable, Tecfile, Parameter/Climate files, Output filters)
-- State variables
-- Spatial/Temporal step (i.e., basin daily, patch monthly)
+-   Step 1: Installation - Set up the RHESSys environment
+-   Step 2: Data Preparation - Gather and format spatial, climate, landscape, and validation data
+-   Step 3: Preprocessing - Generate the landscape representation (Worldfile) and routing (Flowtable) input files
+-   Step 4: Model Setup and Execution - Define the simulation rules and run RHESSys
+-   Step 5: Calibration & Sensitivity Analysis - Condition the model (Initialize/reach equilibrium), refine parameters, validate performance
+-   Step 6: Post Processing - wrangle, analyze, and visualize output data
