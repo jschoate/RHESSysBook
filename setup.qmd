@@ -184,7 +184,7 @@ RHESSys uses Git for version control, and the code is maintained on the hosting 
 
 Install in the order below if you do not already have them installed.
 
--   **Terminal** - provides access to the command line, where you will run the commands in this chapter. The Terminal application is included with macOS, and Linux systems generally provide access to the command line through a terminal application and shell.
+-   **Terminal** - provides access to the command line, where you will run commands to install software and work with RHESSys. The Terminal application is included with macOS, and Linux systems generally provide access to the command line through a terminal application and shell.
 
 -   **Command-line development tools** --- essential compilers, software development utilities, and other tools needed to compile and install RHESSys
 
