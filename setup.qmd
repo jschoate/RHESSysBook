@@ -191,10 +191,11 @@ Install in the order below if you do not already have them installed.
     -   Check if already installed - in a terminal, run: `xcode-select -p`\
         If a path is returned, the tools are installed. If you get an error, install them using Apple's instructions, run `xcode-select –install`\
 
--   [Homebrew](https://brew.sh/) - used on macOS to install several RHESSys dependencies
+-   Package manager - used to install RHESSys utilities and tools
 
-    -   Check if already installed on macOS - in a terminal, run: `brew –version`\
-        If it is installed, it will return the version number. If not, use Homebrew's official installation script in your terminal
+    -   [Homebrew](https://brew.sh/) - the most commonly used package manager for macOS and provides a convenient way to install utilities, tools, and applications, often using pre-compiled binaries. Check if it is already installed on your Mac - in a terminal, run: `brew --version`\
+        If it is installed, this will return its version number. If not, use Homebrew's official [installation script](https://brew.sh/) in your terminal.\
+        Homebrew officially supports only the most recent three macOS releases. If you are using an older version of macOS, you may need to use MacPorts as an alternative. The [MacPorts Project](https://www.macports.org/) continues to maintain dedicated build servers for older macOS versions.
 
     -   Linux distributions (Debian/Ubuntu) ship with a package manager ([apt](https://ubuntu.com/server/docs/how-to/software/package-management/)) already built in, so Homebrew is not necessary on Linux. To refresh apt's local index of available packages/version from the repositories, you may need to run: `sudo apt-get update`
 
@@ -229,14 +230,14 @@ Install in the order below if you do not already have them installed.
     -   macOS:\
         `brew install pkg-config glib netcdf boost boost-build`
 
-        -   NOTE: Homebrew officially supports only the most recent three macOS releases. On older versions, expect `brew install boost` to take substantially longer, since packages are compiled from source rather than downloaded pre-built --- this is expected, not a failure. See Homebrews information on platform [version support](https://docs.brew.sh/Support-Tiers#future-macos-support) if you are working on an older operating system.
+        -   NOTE: Because Homebrew officially supports only the most recent three macOS releases, on older macOS versions expect `brew install boost` to take substantially longer, since packages are compiled from source rather than downloaded pre-built --- this is expected, not a failure. See Homebrew's information on platform [version support](https://docs.brew.sh/Support-Tiers#future-macos-support) if you are working on an older operating system. You may need to use [MacPorts](https://www.macports.org/) as an alternative.
 
     -   Linux:\
         `sudo apt-get install –yes build-essential clang bison flex libbsd-dev libglib2.0-dev libnetcdf-dev pkg-config python3 libboost-dev libboost-tools-dev patchelf`
 
         -   NOTE: If you are using a different version of Linux, check the documentation for your version.
 
-    -   see the appendix for compiling with OpenMP capabilities
+    -   See the Appendix for the dependencies required to compile RHESSys with OpenMP capabilities.
 
 #### [Installation steps]{.underline}
 
