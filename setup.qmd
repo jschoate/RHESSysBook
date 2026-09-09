@@ -178,28 +178,30 @@ That's all you need to do to set up Docker for now. You don't need to learn how 
 
 ### Local installation (macOS, Linux) {#macos}
 
-RHESSys uses Git for version control, and the code is maintained on the hosting service GitHub. You will need certain software and development tools installed on your local machine before you can retrieve and compile the code.
+RHESSys uses Git for version control, and the code is maintained on the hosting service GitHub. Git is the software on your computer that allows you to retrieve and manage different versions of the RHESSys code, while GitHub is the online platform where the RHESSys repository is hosted. You will need certain software and development tools installed on your local machine before you can retrieve and compile the code.
 
 #### [What you will need]{.underline}
 
 Install in the order below if you do not already have them installed.
 
--   Terminal - included with macOS and Linux
+-   **Terminal** - provides access to the command line, where you will run the commands in this chapter. The Terminal application is included with macOS, and Linux systems generally provide access to the command line through a terminal application and shell.
 
--   [Xcode Command Line Tools](https://developer.apple.com/documentation/xcode/installing-the-command-line-tools) - required on macOS for the compilers and build tools
+-   **Command-line development tools** --- essential compilers, software development utilities, and other tools needed to compile and install RHESSys
 
-    -   Check if already installed - in a terminal, run: `xcode-select -p`\
-        If a path is returned, the tools are installed. If you get an error, install them using Apple's instructions, run `xcode-select –install`\
+    -   **macOS**: requires [Xcode Command Line Tools](https://developer.apple.com/documentation/xcode/installing-the-command-line-tools) for the compilers and build tools
+        -   Check if already installed - in a terminal, run: `xcode-select -p`\
+            If a path is returned, the tools are installed. If you get an error, install them using Apple's instructions, run `xcode-select --install`
+    -   **Linux**: Basic command-line tools are generally available by default, but the development tools and libraries required to compile RHESSys may need to be installed using your Linux distribution's package manager. See RHESSys dependencies below for what is needed and how to install it.
 
--   Package manager - used to install RHESSys utilities and tools
+-   **Package manager** - used to install software, libraries, and other dependencies needed to compile RHESSys
 
-    -   [Homebrew](https://brew.sh/) - the most commonly used package manager for macOS and provides a convenient way to install utilities, tools, and applications, often using pre-compiled binaries. Check if it is already installed on your Mac - in a terminal, run: `brew --version`\
+    -   **macOS**: [Homebrew](https://brew.sh/) is the most commonly used package manager for macOS and provides a convenient way to install utilities, tools, and applications, often using pre-compiled binaries. Check if it is already installed on your Mac - in a terminal, run: `brew --version`\
         If it is installed, this will return its version number. If not, use Homebrew's official [installation script](https://brew.sh/) in your terminal.\
-        Homebrew officially supports only the most recent three macOS releases. If you are using an older version of macOS, you may need to use MacPorts as an alternative. The [MacPorts Project](https://www.macports.org/) continues to maintain dedicated build servers for older macOS versions.
+        Homebrew officially supports only the three most recent macOS releases. If you are using an older version of macOS, you may need to use MacPorts as an alternative. The [MacPorts Project](https://www.macports.org/) continues to maintain dedicated build servers for older macOS versions.
 
-    -   Linux distributions (Debian/Ubuntu) ship with a package manager ([apt](https://ubuntu.com/server/docs/how-to/software/package-management/)) already built in, so Homebrew is not necessary on Linux. To refresh apt's local index of available packages/version from the repositories, you may need to run: `sudo apt-get update`
+    -   **Linux**: Debian/Ubuntu distributions include the package manager [`apt`](https://ubuntu.com/server/docs/how-to/software/package-management/) already built in, so Homebrew is not necessary on these systems. To refresh `apt`'s local index of available packages/version from the repositories, you may need to run: `sudo apt-get update`
 
--   [Git](https://github.com/git-guides/install-git) - used to obtain the RHESSys source code
+-   [**Git**](https://github.com/git-guides/install-git) - used to obtain the RHESSys source code
 
     -   Check if already installed - in a terminal run: `git version`\
         If installed, it will return the version number. If not, use GitHub's installation guide for the platform you are working on.
