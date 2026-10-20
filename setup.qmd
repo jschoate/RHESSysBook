@@ -4,7 +4,7 @@
 
 There are several ways to install and run RHESSys, and the best option depends on how you plan to use it and the computing environment you are working in. If you are new to RHESSys, you will probably want to use Docker---the simplest option for getting up and running quickly, without wading through more complicated installation procedures you do not need. This can also be a good choice for experienced users who are primarily interested in running RHESSys and do not need to modify or work directly with the code. Windows users should use this option, since RHESSys does not currently support a local installation on Windows. It is also a good choice if you are working in a standard virtual machine through a cloud service provider.
 
-If you plan to work directly with the RHESSys source code to develop or modify model capabilities, a local installation on macOS or Linux may be a better fit. If you plan to run RHESSys on an HPC cluster, including an HPC cluster deployed through a cloud service (such as AWS ParallelCluster) where Docker is not available, you can use an Apptainer/Singularity container instead.
+If you plan to work directly with the RHESSys source code to develop or modify model capabilities, a local installation on macOS or Linux may be a better fit. If you plan to run RHESSys in a HPC environment, including an HPC cluster deployed through a cloud service (such as AWS ParallelCluster) where Docker is not available, you can use an Apptainer/Singularity container instead.
 
 This chapter describes these three options and helps you choose the one that best fits your needs. You do not need to learn all three approaches.
 
@@ -68,7 +68,7 @@ A local installation gives you more control over RHESSys and how you work with t
 
 ### [HPC environments (Apptainer/Singularity)](#sif)
 
-If you plan to run RHESSys on a high-performance computing (HPC) cluster, you can use Apptainer or Singularity to run RHESSys in a container. These are container systems similar to Docker, but designed to work well on HPC systems where Docker may not be available. Like Docker, they package RHESSys and the software it needs together, so you don't have to install all of its dependencies directly on the HPC system. This includes HPC clusters set up through cloud services such as AWS ParallelCluster.
+If you plan to run RHESSys on a high-performance computing (HPC) cluster, you can use Apptainer or Singularity to run RHESSys in a container. These are container systems similar to Docker, but designed to work well on HPC systems where Docker may not be available. Like Docker, they package RHESSys and the software it needs together, so you don't have to install all of its dependencies directly on the HPC system. This includes a cluster management tool for an HPC environment such as AWS ParallelCluster.
 
 #### **Why use it?**
 
@@ -88,7 +88,7 @@ If you plan to run RHESSys on a high-performance computing (HPC) cluster, you ca
 #### **Platforms**
 
 -   HPC clusters
--   HPC clusters deployed through cloud services, such as AWS ParallelCluster
+-   HPC clusters deployed through cloud services, such as the AWS ParallelCluster management tool
 
 **Keep in mind** Apptainer or Singularity may not be installed on your HPC system by default. Depending on the system, you may need to install it yourself or ask your system administrator for assistance.
 

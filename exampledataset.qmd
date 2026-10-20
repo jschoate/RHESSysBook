@@ -4,23 +4,28 @@
 
 ## Study Site Overview
 
--   Location → Sagehen
--   Characteristics
+The example data in this book were developed using the Sagehen Creek Watershed on the eastern slope of the northern Sierra Nevada, formally designated and managed as the Sagehen Experimental Forest by the USDA Forest Service in cooperation with the University of California, Berkeley. At roughly 27 km², it's small enough to run quickly and look at closely, but it still has real variation in elevation, aspect, soils, and vegetation. That's useful here because we'll be setting up the model at several spatial scales, from a single patch to a sub-basin to the whole watershed, to demonstrate different workflow approaches and support efficient, practical application.
+
+Sagehen has been a research site for a long time, with an active field station and decades streamflow, snow, climate, and vegetation data. The long streamflow and snow records give us something to calibrate against, with clear seasonal signals and a range of conditions, including wet years, dry years, and stretches in between. The mix of conifer forest, chaparral, and meadow supports landcover change scenarios and makes vegetation parameters meaningful targets for calibration and sensitivity analysis. And because the Sierra is a fire-adapted landscape, it works well for modeling fire scenarios.
 
 ## Dataset Contents
 
--   Standard project directory structure
+Each type and it's purpose will be discussed in the chapters that follow as they are introduced. The files are maintained in the standard RHESSys directory structure set-up.
 
--   Spatial files
+-   Spatial files (in Spatial_Data directory): information on each can be found in chapter 5 User-Acquired data, Spatial Data
 
--   Climate Base station examples
+    -   DEM obtained from USGS watershed gauge coordinates for Sagehen Creek in the Sierra Nevada
+    -   Raster inputs needed for RHESSys generated directly from the DEM: Aspect, Slope, East/West Horizons, Stream network, Subbasins (hillslopes)
+    -   Basin
+    -   Patches
+    -   Aspatial rules
 
-    -   for local data (point, station)
-    -   for gridded products
-        -   ascii formatted
-        -   netcdf
+-   Climate Base station examples (in climate directory): information on each can be found in chapter 6 RHESSys-specific Files, Base Station File
 
--   Meterological files
+    -   local data (point, station)
+    -   netcdf gridded product
+
+-   Meterological files (in climate directory): information on each can be found in chapter 5 User-Acquired data, Climate Data
 
     -   Precipitation
     -   Temperature
@@ -30,22 +35,38 @@
         -   local data (point, station data)
         -   gridded products
 
--   Definition (default) Files
+-   Definition (default) Files (in defs directory): information on each can be found in chapter 6 RHESSys-specific Files, Definition (Default) Files
 
--   observational data
+    -   Standard basin file
+    -   Standard hillslope file
+    -   Zone file
+    -   Soil: sandyloam and riparian files
+    -   Landuse file
+    -   Vegetation: pine and grass files
+
+-   Observational data (in auxdata directory, i.e. auxiliary data): information on each can be found in chapter 5 User-Acquired data, Observational Data
 
     -   streamflow timeseries
     -   reference values (i.e. LAI, Height, Biomass)
+    -   NLCD landcover image
 
--   Preprocessing Rscript
+-   Preprocessing Rscript (in PreProcess directory): information can be found in chapter 8 Implementation & Execution, RHESSysIOin R Script configuration
 
--   Worldfile and Flowtable examples (for a patch, a sub-basin (hillslope), and a full basin)
+    -   run_RHESSysPreprocess.R script
 
--   Worldfile Header example
+-   Worldfile (in worldfiles directory): information on each can be found in chapter 6 RHESSys-specific Files, Worldfile
 
--   Tecfile examples
+    -   sagehen_basin.world
+    -   sagehen_subbasin.world
+    -   sagehen_patch.world
 
--   Output Filter examples
+-   Flowtable (in flowtables directory): information on each can be found in chapter 6 RHESSys-specific Files, Flowtable
+
+-   Worldfile Header (in worldfiles directory): information on each can be found in chapter 6 RHESSys-specific Files, Header File
+
+-   Tecfile (in tecfiles directory): information on each can be found in chapter 6 RHESSys-specific Files, Tecfile and Output Filters
+
+-   Output Filter (in tecfiles directory): information on each can be found in chapter 6 RHESSys-specific Files, Tecfile and Output Filters
 
 -   Simulation Rscripts
 
@@ -64,7 +85,12 @@
 
 ## How to use this data
 
--   Contextual understanding
--   Performance Evaluation - verification for user generated files
--   Troubleshooting
--   Modular learning - start at any step in the manual
+The example dataset is meant to be used in whatever way is most useful to you. You can follow the book from start to finish, or dip into it when you need a specific piece. Here are the main ways to use it.
+
+**Contextual understanding**. Each file type in RHESSys can look abstract until you see a real one. As each file is introduced in the chapters that follow, open the matching example and compare it to the description in the text. Seeing how a worldfile, flowtable, or definition file is actually laid out, and how the pieces refer to each other, makes the formats much easier to follow, and it shows what a complete, working set of inputs looks like for a real watershed.
+
+**Performance evaluation**. As you build your own files, whether for Sagehen or for a different watershed, you can check your work against the example files. If you generate a flowtable, worldfile, or set of climate inputs and aren't sure it came out right, compare it to the corresponding example. The example model output also gives you a reference point: if you run the same setup and get substantially different results, that's a sign something went wrong earlier in the process.
+
+**Troubleshooting**. When a run fails or the results look wrong, the dataset gives you a known working configuration to fall back on.
+
+**Modular learning**. The dataset includes files for every stage of the workflow, so you don't need to start at the beginning. If you already have spatial data prepared, you can pick up at worldfile creation. If you already have a working model, you can jump straight to calibration or sensitivity analysis using the example scripts and observational data. Each chapter points to the files it needs, so you can start at any step and still have everything required to follow along.
